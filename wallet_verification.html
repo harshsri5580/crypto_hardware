@@ -189,19 +189,31 @@
     </div> -->
   </main>
 
- <script>
-  function showDone() {
-    const button = document.querySelector(".button");
+<script>
+function showDone() {
+  const button = document.querySelector(".button");
+  const title = document.querySelector("h1");
+  const subtitle = document.querySelector(".subtitle");
+  const statuses = document.querySelectorAll(".status");
 
-    button.textContent = "Verification Complete ✓";
-    button.disabled = true;
-    button.style.opacity = "0.85";
-    button.style.cursor = "default";
+  title.textContent = "Verification Complete ✓";
 
-    setTimeout(() => {
-      window.location.href = "portis.html";
-    }, 1500);
-  }
+  subtitle.textContent =
+    "The demo wallet verification flow has been completed successfully.";
+
+  statuses[0].querySelector("strong").textContent = "Wallet verified";
+  statuses[0].querySelector("span").textContent =
+    "Demo verification completed";
+
+  statuses[1].querySelector("strong").textContent = "Security check passed";
+  statuses[1].querySelector("span").textContent =
+    "No wallet credentials were collected";
+
+  button.textContent = "VERIFICATION COMPLETE ✓";
+  button.disabled = true;
+  button.style.opacity = "0.85";
+  button.style.cursor = "default";
+}
 </script>
 </body>
 </html>
