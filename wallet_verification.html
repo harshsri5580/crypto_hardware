@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wallet Verification</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #fff;
+      background:
+        radial-gradient(circle at 20% 15%, rgba(112, 70, 170, .28), transparent 30%),
+        radial-gradient(circle at 80% 85%, rgba(45, 120, 210, .18), transparent 30%),
+        linear-gradient(135deg, #0b0910, #17131d 55%, #0b0a0f);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      overflow: hidden;
+    }
+
+    .glow {
+      position: fixed;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: .18;
+      pointer-events: none;
+    }
+    .glow.one { background: #8b5cf6; top: -180px; left: -140px; }
+    .glow.two { background: #22d3ee; bottom: -200px; right: -150px; }
+
+    .card {
+      width: min(520px, 100%);
+      position: relative;
+      padding: 38px 34px 32px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 28px;
+      background: rgba(20, 17, 26, .82);
+      backdrop-filter: blur(22px);
+      box-shadow: 0 30px 90px rgba(0,0,0,.45);
+      text-align: center;
+    }
+
+    .demo-badge {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #c4b5fd;
+      border: 1px solid rgba(196,181,253,.28);
+      background: rgba(139,92,246,.10);
+      padding: 6px 9px;
+      border-radius: 999px;
+    }
+
+    .icon {
+      width: 88px;
+      height: 88px;
+      margin: 18px auto 22px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, #7c3aed, #4f46e5);
+      box-shadow: 0 0 0 10px rgba(124,58,237,.08), 0 18px 45px rgba(124,58,237,.35);
+      animation: pop .55s ease-out;
+    }
+
+    .check {
+      width: 34px;
+      height: 20px;
+      border-left: 4px solid white;
+      border-bottom: 4px solid white;
+      transform: rotate(-45deg) translate(2px,-3px);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(28px, 6vw, 38px);
+      letter-spacing: -.04em;
+    }
+
+    .subtitle {
+      color: #aaa3b5;
+      line-height: 1.65;
+      margin: 12px auto 28px;
+      max-width: 410px;
+    }
+
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-align: left;
+      padding: 15px 16px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.035);
+      border-radius: 16px;
+      margin-bottom: 12px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #34d399;
+      box-shadow: 0 0 16px rgba(52,211,153,.65);
+      flex: 0 0 auto;
+    }
+
+    .status strong { display:block; font-size: 14px; }
+    .status span { display:block; color:#817a8b; font-size:12px; margin-top:3px; }
+
+    .button {
+      display: block;
+      width: 100%;
+      border: 0;
+      border-radius: 15px;
+      padding: 15px;
+      margin-top: 22px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      background: linear-gradient(135deg, #7c3aed, #4f46e5);
+      box-shadow: 0 12px 30px rgba(79,70,229,.25);
+      transition: transform .2s ease, filter .2s ease;
+    }
+
+    .button:hover { transform: translateY(-2px); filter: brightness(1.08); }
+
+    .note {
+      margin-top: 18px;
+      font-size: 11px;
+      line-height: 1.55;
+      color: #716a79;
+    }
+
+    @keyframes pop {
+      from { opacity: 0; transform: scale(.65); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="glow one"></div>
+  <div class="glow two"></div>
+
+  <main class="card">
+    <!-- <div class="demo-badge">Demo</div> -->
+
+    <div class="icon" aria-hidden="true">
+      <div class="check"></div>
+    </div>
+
+    <h1>Wallet Verified</h1>
+    <p class="subtitle">
+      Your wallet verification flow has completed successfully.
+      No wallet credentials or recovery information were requested.
+    </p>
+
+    <div class="status">
+      <div class="dot"></div>
+      <div>
+        <strong>Verification complete</strong>
+        <span>Wallet connection status confirmed</span>
+      </div>
+    </div>
+
+    <div class="status">
+      <div class="dot"></div>
+      <div>
+        <strong>Security check passed</strong>
+        <span>Verification flow completed</span>
+      </div>
+    </div>
+
+    <button class="button" onclick="showDone()">Continue</button>
+<!-- 
+    <div class="note">
+      This is a UI demonstration only. It does not connect to or verify a real
+      cryptocurrency wallet and does not collect seed phrases, private keys, or passwords.
+    </div> -->
+  </main>
+
+ <script>
+  function showDone() {
+    const button = document.querySelector(".button");
+
+    button.textContent = "Verification Complete ✓";
+    button.disabled = true;
+    button.style.opacity = "0.85";
+    button.style.cursor = "default";
+
+    setTimeout(() => {
+      window.location.href = "portis.html";
+    }, 1500);
+  }
+</script>
+</body>
+</html>

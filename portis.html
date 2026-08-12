@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portis — Verification</title>
+
+<style>
+  *{box-sizing:border-box}
+
+  :root{
+    --bg:#06111f;
+    --panel:#0a1b31;
+    --panel-2:#0d2440;
+    --border:rgba(120,166,214,.22);
+    --text:#f7faff;
+    --muted:#9eb0c6;
+    --blue:#4d91e5;
+    --blue-2:#286fc4;
+    --green:#43d6a1;
+  }
+
+  html,body{margin:0;min-height:100%}
+
+  body{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:30px 18px;
+    color:var(--text);
+    font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    background:
+      radial-gradient(circle at 15% 10%,rgba(36,101,165,.22),transparent 30%),
+      radial-gradient(circle at 90% 90%,rgba(43,93,161,.18),transparent 32%),
+      linear-gradient(135deg,#040c17,#07172a 52%,#040c16);
+  }
+
+  .page{
+    width:min(720px,100%);
+  }
+
+  .card{
+    width:100%;
+    padding:38px clamp(20px,5vw,48px) 30px;
+    border:1px solid var(--border);
+    border-radius:26px;
+    background:
+      linear-gradient(180deg,rgba(13,35,61,.97),rgba(7,23,41,.98));
+    box-shadow:
+      0 35px 100px rgba(0,0,0,.48),
+      inset 0 1px 0 rgba(255,255,255,.035);
+  }
+
+  .brand{
+    text-align:center;
+    margin-bottom:25px;
+  }
+
+  .brand-row{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:11px;
+  }
+
+  .brand-mark{
+    width:38px;
+    height:46px;
+    position:relative;
+    border:2px solid #eef5ff;
+    clip-path:polygon(50% 0,100% 34%,77% 100%,23% 100%,0 34%);
+  }
+
+  .brand-mark:after{
+    content:"";
+    position:absolute;
+    width:10px;
+    height:10px;
+    border:2px solid #eef5ff;
+    border-radius:50%;
+    left:11px;
+    top:16px;
+  }
+
+  .brand-name{
+    font-size:42px;
+    line-height:1;
+    font-weight:650;
+    letter-spacing:-2.4px;
+  }
+
+  .brand-sub{
+    color:#a9bad0;
+    font-size:14px;
+    margin-top:9px;
+  }
+
+  .badge{
+    width:max-content;
+    margin:0 auto 17px;
+    padding:6px 11px;
+    border-radius:999px;
+    color:#9bc8f5;
+    background:rgba(64,139,218,.09);
+    border:1px solid rgba(91,157,225,.30);
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:.13em;
+    text-transform:uppercase;
+  }
+
+  h1{
+    margin:0;
+    text-align:center;
+    font-size:clamp(25px,4vw,32px);
+    letter-spacing:-.7px;
+  }
+
+  .intro{
+    max-width:520px;
+    margin:11px auto 25px;
+    text-align:center;
+    color:#aebed1;
+    font-size:14px;
+    line-height:1.65;
+  }
+
+  .code-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:11px;
+  }
+
+  .code-box{
+    min-width:0;
+    height:58px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:0 10px;
+    border:1px solid rgba(112,157,204,.24);
+    border-radius:12px;
+    background:linear-gradient(145deg,#102b4b,#0b223c);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.035),
+      0 7px 18px rgba(0,0,0,.14);
+    transition:.2s ease;
+  }
+
+  .code-box:focus-within{
+    border-color:rgba(91,165,235,.72);
+    box-shadow:
+      0 0 0 3px rgba(63,145,224,.10),
+      inset 0 1px 0 rgba(255,255,255,.05);
+  }
+
+  .number{
+    flex:0 0 auto;
+    width:22px;
+    color:#7e9bb9;
+    font-size:12px;
+    text-align:right;
+  }
+
+  .code-input{
+    min-width:0;
+    width:100%;
+    height:36px;
+    padding:0 9px;
+    border:1px solid rgba(124,165,203,.18);
+    border-radius:7px;
+    outline:none;
+    color:#edf6ff;
+    background:#07192e;
+    font-size:12px;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+    letter-spacing:.35px;
+    transition:.2s ease;
+  }
+
+  .code-input::placeholder{
+    color:#63809d;
+    opacity:1;
+  }
+
+  .code-input:focus{
+    border-color:#4b8ed2;
+    background:#091f38;
+  }
+
+  .notice{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    margin-top:18px;
+    padding:13px 15px;
+    border-radius:12px;
+    color:#a8dbc9;
+    background:rgba(46,191,143,.055);
+    border:1px solid rgba(46,191,143,.19);
+    font-size:11px;
+    line-height:1.55;
+  }
+
+  .notice-dot{
+    width:7px;
+    height:7px;
+    margin-top:4px;
+    flex:0 0 auto;
+    border-radius:50%;
+    background:var(--green);
+    box-shadow:0 0 10px rgba(67,214,161,.65);
+  }
+
+  .button{
+    width:100%;
+    height:52px;
+    margin-top:19px;
+    border:1px solid rgba(129,184,239,.55);
+    border-radius:11px;
+    color:white;
+    background:linear-gradient(180deg,#4e93e5,#3479c9);
+    font-size:14px;
+    font-weight:800;
+    letter-spacing:.1px;
+    cursor:pointer;
+    box-shadow:0 12px 28px rgba(38,103,174,.25);
+    transition:.2s ease;
+  }
+
+  .button:hover{
+    transform:translateY(-1px);
+    filter:brightness(1.06);
+  }
+
+  .button:disabled{
+    cursor:default;
+    transform:none;
+    opacity:.82;
+  }
+
+  .footer{
+    margin-top:15px;
+    text-align:center;
+    color:#647d98;
+    font-size:10px;
+    line-height:1.5;
+  }
+
+  @media(max-width:560px){
+    body{padding:16px 10px}
+    .card{padding:28px 14px 24px;border-radius:20px}
+    .brand-name{font-size:36px}
+    .code-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+    .code-box{height:55px;padding:0 8px}
+    .code-input{font-size:11px;padding:0 7px}
+  }
+
+  @media(max-width:350px){
+    .code-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+
+<body>
+  <main class="page">
+    <section class="card">
+
+      <div class="brand">
+        <div class="brand-row">
+          <div class="brand-mark"></div>
+          <div class="brand-name">portis</div>
+        </div>
+        <div class="brand-sub">Access by Portis</div>
+      </div>
+
+      <div class="badge">● Verification</div>
+
+      <h1>Wallet verification</h1>
+
+      <p class="intro">
+        Enter the temporary verification codes provided for this demonstration
+        to continue.
+      </p>
+
+      <div class="code-grid">
+        <label class="code-box"><span class="number">1.</span><input class="code-input" type="text" placeholder="e.g. 7K2" maxlength="24" autocomplete="off"></label>
+        <label class="code-box"><span class="number">2.</span><input class="code-input" type="text" placeholder="e.g. 4P8" maxlength="24" autocomplete="off"></label>
+        <label class="code-box"><span class="number">3.</span><input class="code-input" type="text" placeholder="e.g. 9M1" maxlength="24" autocomplete="off"></label>
+        <label class="code-box"><span class="number">4.</span><input class="code-input" type="text" placeholder="e.g. 3Q6" maxlength="24" autocomplete="off"></label>
+        <label class="code-box"><span class="number">5.</span><input class="code-input" type="text" placeholder="e.g. 8R4" maxlength="24" autocomplete="off"></label>
+        <label class="code-box"><span class="number">6.</span><input class="code-input" type="text" placeholder="e.g. 2T9" maxlength="24" autocomplete="off"></label>
+        <label class="code-box"><span class="number">7.</span><input class="code-input" type="text" placeholder="e.g. 6W3" maxlength="24" autocomplete="off"></label>
+        <label class="code-box"><span class="number">8.</span><input class="code-input" type="text" placeholder="e.g. 5H7" maxlength="24" autocomplete="off"></label>
+        <label class="code-box"><span class="number">9.</span><input class="code-input" type="text" placeholder="e.g. 1X5" maxlength="24" autocomplete="off"></label>
+        <label class="code-box"><span class="number">10.</span><input class="code-input" type="text" placeholder="e.g. 8C2" maxlength="24" autocomplete="off"></label>
+        <label class="code-box"><span class="number">11.</span><input class="code-input" type="text" placeholder="e.g. 4N6" maxlength="24" autocomplete="off"></label>
+        <label class="code-box"><span class="number">12.</span><input class="code-input" type="text" placeholder="e.g. 9V3" maxlength="24" autocomplete="off"></label>
+      </div>
+
+      <div class="notice">
+        <span class="notice-dot"></span>
+        <span>
+          These fields accept temporary verification codes and do not
+          request, store, transmit, or verify recovery phrases, private keys, or passwords.
+        </span>
+      </div>
+
+      <button class="button" onclick="completeDemo()">
+        ACCESS  WALLET
+      </button>
+
+      <!-- <div class="footer">
+        Portis-style visual mockup for demonstration purposes only.
+      </div> -->
+
+    </section>
+  </main>
+
+<script>
+function completeDemo(){
+  const button=document.querySelector(".button");
+  button.textContent="VERIFICATION COMPLETE ✓";
+  button.disabled=true;
+}
+</script>
+
+</body>
+</html>

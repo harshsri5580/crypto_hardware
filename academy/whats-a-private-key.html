@@ -1,0 +1,1996 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from www.ledger.com/academy/whats-a-private-key by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Aug 2026 10:30:27 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1">
+  <script>document.querySelector('html').classList.remove('no-js');</script>
+
+  <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<link rel="alternate" hreflang="en" href="whats-a-private-key.html" />
+<link rel="alternate" hreflang="fr" href="../fr/academy/quest-ce-quune-cle-priveenbsp.html" />
+<link rel="alternate" hreflang="tr" href="../tr/academy/ozel-anahtar-nedir.html" />
+<link rel="alternate" hreflang="de" href="../de/academy/basic-basics/owning-and-using-it/was-ist-ein-privater-schluessel-2.html" />
+<link rel="alternate" hreflang="pt-br" href="../pt-br/academy/basic-basics/owning-and-using-it-pt-br-2/o-que-e-uma-chave-privada.html" />
+<link rel="alternate" hreflang="es" href="../es/academy/que-es-una-clave-privada.html" />
+<link rel="alternate" hreflang="ru" href="../ru/academy/2-%d0%ba%d0%b0%d0%ba-%d0%bf%d1%80%d0%b0%d0%b2%d0%b8%d0%bb%d1%8c%d0%bd%d0%be-%d0%b2%d0%bb%d0%b0%d0%b4%d0%b5%d1%82%d1%8c-%d0%ba%d1%80%d0%b8%d0%bf%d1%82%d0%be%d0%b0%d0%ba%d1%82%d0%b8%d0%b2%d0%b0%d0%bc/%d1%87%d1%82%d0%be-%d1%82%d0%b0%d0%ba%d0%be%d0%b5-%d0%bf%d1%80%d0%b8%d0%b2%d0%b0%d1%82%d0%bd%d1%8b%d0%b9-%d0%ba%d0%bb%d1%8e%d1%87-2.html" />
+<link rel="alternate" hreflang="zh-hans" href="../zh-hans/academy/%e4%bb%80%e4%b9%88%e6%98%af%e7%a7%81%e9%92%a5.html" />
+<link rel="alternate" hreflang="ja" href="../ja/academy/%e7%a7%98%e5%af%86%e9%8d%b5%e3%81%a8%e3%81%af.html" />
+<link rel="alternate" hreflang="ko" href="../ko/academy/%ea%b0%9c%ec%9d%b8-%ed%82%a4%eb%8a%94-%eb%ac%b4%ec%97%87%ec%9d%b8%ea%b0%80%ec%9a%94.html" />
+<link rel="alternate" hreflang="ar" href="../ar/academy/basic-basics/owning-and-using-it/%d9%85%d8%a7-%d9%87%d9%88-%d8%a7%d9%84%d9%85%d9%81%d8%aa%d8%a7%d8%ad-%d8%a7%d9%84%d8%ae%d8%a7%d8%b5-2.html" />
+<link rel="alternate" hreflang="th" href="../th/academy/owning-and-using-it-th-2/whats-a-private-key.html" />
+<link rel="alternate" hreflang="x-default" href="whats-a-private-key.html" />
+<link rel="preload" href="../../cdn.optimizely.com/js/30433690750.js" as="script" crossorigin="anonymous"><link rel="preconnect" href="http://logx.optimizely.com/" crossorigin><link rel="dns-prefetch" href="https://cdn.optimizely.com/">
+    <script>
+    function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(";");
+        for(let i = 0; i <ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === " ") {
+        c = c.substring(1);
+        }
+        if (c.indexOf(name) === 0) {
+        return c.substring(name.length, c.length);
+        }
+        }
+        return "";
+    }
+    function consentState() {
+        const optanonCookieBoxClosedCookieValue = getCookie("OptanonAlertBoxClosed");
+
+        if (!optanonCookieBoxClosedCookieValue) return "pending";
+        
+        const optanonConsentCookieValue = getCookie("OptanonConsent");
+        
+        if (optanonConsentCookieValue?.includes("C0002:1")) return "accepted";
+        
+        return "refused";
+    }
+    
+    window.optimizely = window.optimizely || [];
+    
+    switch(consentState()) {
+        case "accepted":
+            window.optimizely.push({
+                type: "sendEvents",
+            });
+         break;
+         case "refused":
+            window.optimizely.push({
+                type: "disable",
+                scope: "tracking",
+            });
+        break; 
+        case "pending":
+            window.optimizely.push({
+                type: "holdEvents",
+            });
+        break;
+    }
+    
+    window.addEventListener("DOMContentLoaded", function () {
+      setTimeout(() => {
+        window.OneTrust.OnConsentChanged(function() {
+            if (consentState() === "accepted") {
+                window.optimizely.push({
+                    type: "sendEvents",
+                });
+            } else {
+                window.optimizely.push({
+                    type: "disable",
+                    scope: "tracking",
+                });
+            }
+        });
+      }, 500);
+    });
+    </script>
+	<!-- This site is optimized with the Yoast SEO plugin v28.2 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<title>What Is a Private Key? | Ledger</title>
+	<meta name="description" content="A private key is what lets you manage and store crypto in a blockchain account; But what does that mean exactly? Here&#039;s how it works" />
+	<link rel="canonical" href="whats-a-private-key.html" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="What Is a Private Key? | Ledger" />
+	<meta property="og:description" content="A private key is what lets you manage and store crypto in a blockchain account; But what does that mean exactly? Here&#039;s how it works" />
+	<meta property="og:url" content="https://www.ledger.com/academy/whats-a-private-key" />
+	<meta property="og:site_name" content="Ledger" />
+	<meta property="article:publisher" content="https://www.facebook.com/Ledger/" />
+	<meta property="article:modified_time" content="2026-04-09T12:41:45+00:00" />
+	<meta property="og:image" content="https://ledger-wp-website-s3-prd.ledger.com/uploads/2022/11/11_Classroom_Thumb-2.jpg" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="675" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@ledger" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="7 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/www.ledger.com\/academy\/whats-a-private-key","url":"https:\/\/www.ledger.com\/academy\/whats-a-private-key","name":"What Is a Private Key? | Ledger","isPartOf":{"@id":"https:\/\/www.ledger.com\/#website"},"primaryImageOfPage":{"@id":"https:\/\/www.ledger.com\/academy\/whats-a-private-key#primaryimage"},"image":{"@id":"https:\/\/www.ledger.com\/academy\/whats-a-private-key#primaryimage"},"thumbnailUrl":"https:\/\/ledger-wp-website-s3-prd.ledger.com\/uploads\/2022\/11\/11_Classroom_Thumb-2.jpg","datePublished":"2022-11-01T16:50:55+00:00","dateModified":"2026-04-09T12:41:45+00:00","description":"A private key is what lets you manage and store crypto in a blockchain account; But what does that mean exactly? Here's how it works","breadcrumb":{"@id":"https:\/\/www.ledger.com\/academy\/whats-a-private-key#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https:\/\/www.ledger.com\/academy\/whats-a-private-key"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/www.ledger.com\/academy\/whats-a-private-key#primaryimage","url":"https:\/\/ledger-wp-website-s3-prd.ledger.com\/uploads\/2022\/11\/11_Classroom_Thumb-2.jpg","contentUrl":"https:\/\/ledger-wp-website-s3-prd.ledger.com\/uploads\/2022\/11\/11_Classroom_Thumb-2.jpg","width":1200,"height":675,"caption":"Every blockchain address has both a public key and a private key."},{"@type":"BreadcrumbList","@id":"https:\/\/www.ledger.com\/academy\/whats-a-private-key#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Academy","item":"https:\/\/www.ledger.com\/academy"},{"@type":"ListItem","position":2,"name":"What Is a Private Key?"}]},{"@type":"WebSite","@id":"https:\/\/www.ledger.com\/#website","url":"https:\/\/www.ledger.com\/","name":"Ledger","description":"Keep your crypto secure, everywhere","publisher":{"@id":"https:\/\/www.ledger.com\/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/www.ledger.com\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https:\/\/www.ledger.com\/#organization","name":"Ledger","url":"https:\/\/www.ledger.com\/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/www.ledger.com\/#\/schema\/logo\/image\/","url":"https:\/\/www.ledger.com\/wp-content\/uploads\/2023\/08\/Ledger-logo-696.png","contentUrl":"https:\/\/www.ledger.com\/wp-content\/uploads\/2023\/08\/Ledger-logo-696.png","width":696,"height":697,"caption":"Ledger"},"image":{"@id":"https:\/\/www.ledger.com\/#\/schema\/logo\/image\/"},"sameAs":["https:\/\/www.facebook.com\/Ledger\/","whats-a-private-key.html\/\/x.com\/ledger","whats-a-private-key.html\/\/www.instagram.com\/ledgerhq","whats-a-private-key.html\/\/www.linkedin.com\/company\/ledgerhq","https:\/\/www.youtube.com\/Ledger"]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='http://cdn.cookielaw.org/' />
+<link rel='dns-prefetch' href='http://cdn.optimizely.com/' />
+<link rel='dns-prefetch' href='http://cdnjs.cloudflare.com/' />
+<link rel='dns-prefetch' href='http://kit.fontawesome.com/' />
+<link rel='dns-prefetch' href='http://cdn.jsdelivr.net/' />
+<link rel='dns-prefetch' href='http://ledger-wp-website-s3-prd.ledger.com/' />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='swiper-css-css' href='../../cdnjs.cloudflare.com/ajax/libs/Swiper/9.2.0/swiper-bundle.minedeb.css?ver=9.2.0' media='all' />
+<link rel='stylesheet' id='main-css' href='../wp-content/themes/ledger-v2/public/css/maind676.css?ver=14592' media='all' />
+<link rel='stylesheet' id='academy-css' href='../wp-content/themes/ledger-v2/public/css/academyd676.html?ver=14592' media='all' />
+<link rel='stylesheet' id='heateor_sss_frontend_css-css' href='../wp-content/plugins/sassy-social-share/public/css/sassy-social-share-publicd05b.css?ver=3.3.79' media='all' />
+<style id="heateor_sss_frontend_css-inline-css">
+.heateor_sss_button_instagram span.heateor_sss_svg,a.heateor_sss_instagram span.heateor_sss_svg{background:radial-gradient(circle at 30% 107%,#fdf497 0,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285aeb 90%)}div.heateor_sss_horizontal_sharing a.heateor_sss_button_instagram span{background:#999!important;}div.heateor_sss_standard_follow_icons_container a.heateor_sss_button_instagram span{background:#999}div.heateor_sss_horizontal_sharing a.heateor_sss_button_instagram span:hover{background:#222!important;}div.heateor_sss_standard_follow_icons_container a.heateor_sss_button_instagram span:hover{background:#222}.heateor_sss_horizontal_sharing .heateor_sss_svg,.heateor_sss_standard_follow_icons_container .heateor_sss_svg{background-color:#999!important;background:#999!important;color:#fff;border-width:0px;border-style:solid;border-color:transparent}.heateor_sss_horizontal_sharing span.heateor_sss_svg:hover,.heateor_sss_standard_follow_icons_container span.heateor_sss_svg:hover{background-color:#222!important;background:#222!importantborder-color:transparent;}.heateor_sss_vertical_sharing span.heateor_sss_svg,.heateor_sss_floating_follow_icons_container span.heateor_sss_svg{color:#fff;border-width:0px;border-style:solid;border-color:transparent;}.heateor_sss_vertical_sharing span.heateor_sss_svg:hover,.heateor_sss_floating_follow_icons_container span.heateor_sss_svg:hover{border-color:transparent;}
+/*# sourceURL=heateor_sss_frontend_css-inline-css */
+</style>
+<script id="wpml-cookie-js-extra">
+var wpml_cookies = {"wp-wpml_current_language":{"value":"en","expires":1,"path":"/"}};
+var wpml_cookies = {"wp-wpml_current_language":{"value":"en","expires":1,"path":"/"}};
+//# sourceURL=wpml-cookie-js-extra
+</script>
+<script data-wp-strategy="defer" defer id="wpml-cookie-js" src="../wp-content/plugins/sitepress-multilingual-cms/res/js/cookies/language-cookie9a57.js?ver=496000"></script>
+<script id="onetrust-js" data-document-language="true" charset="UTF-8" data-domain-script="5ff3ecce-44bd-4ef3-b746-ec81546bf82a" src="../../cdn.cookielaw.org/scripttemplates/otSDKStub68b3.js?ver=1"></script>
+<script id="optimizely-js" src="../../cdn.optimizely.com/js/3043369075068b3.js?ver=1"></script>
+<script id="jquery-core-js" src="../wp-includes/js/jquery/jquery.minf43b.js?ver=3.7.1"></script>
+<script id="jquery-migrate-js" src="../wp-includes/js/jquery/jquery-migrate.min5589.js?ver=3.4.1"></script>
+<meta name="generator" content="WPML ver:4.9.6 stt:5,59,1,4,3,28,29,42,45,2,52,53;" />
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || []
+        w[l].push({
+          'gtm.start':
+            new Date().getTime(), event: 'gtm.js'
+        })
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''
+        j.setAttributeNode(d.createAttribute('data-ot-ignore'))
+        j.async = true
+        j.src = '../../www.googletagmanager.com/gtm5445.html?id=' + i + dl
+        f.parentNode.insertBefore(j, f)
+      })(window, document, 'script', 'dataLayer', 'GTM-W5FKZ2N')</script>
+    <!-- End Google Tag Manager -->
+	        <script>
+          if (document.domain != 'ledger.com' && document.domain != 'www.ledger.com') {
+            var l = location.href
+            var r = document.referrer
+            var m = new Image()
+            m.src = '//canarytokens.com/' +
+              '5lfx15mtsy87zb3pm9pmshyam.jpg?l=' +
+              encodeURI(l) + '&amp;r=' + encodeURI(r)
+          }
+        </script>
+		<link rel="icon" href="../../ledger-wp-website-s3-prd.ledger.com/uploads/2021/11/Ledger_favicon.png" sizes="32x32" />
+<link rel="icon" href="../../ledger-wp-website-s3-prd.ledger.com/uploads/2021/11/Ledger_favicon.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="../../ledger-wp-website-s3-prd.ledger.com/uploads/2021/11/Ledger_favicon.png" />
+<meta name="msapplication-TileImage" content="https://ledger-wp-website-s3-prd.ledger.com/uploads/2021/11/Ledger_favicon.png" />
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.ledger.com/"},{"@type":"ListItem","position":2,"name":"Ledger Academy","item":"https://www.ledger.com/academy"},{"@type":"ListItem","position":3,"name":"B) How to secure your crypto","item":""},{"@type":"ListItem","position":4,"name":"What Is a Private Key?"}]}</script>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What Is a Private Key?","datePublished":"2022-11-01T17:50:55+01:00","dateModified":"2026-04-09T14:41:45+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.ledger.com/academy/whats-a-private-key"},"publisher":{"@type":"Organization","name":"Ledger","url":"https://www.ledger.com/","logo":{"@type":"ImageObject","url":"https://www.ledger.com/wp-content/themes/ledger-v2/dist/public/images/logo.svg"}},"author":{"@type":"Person","name":"Ledger","url":"https://www.ledger.com/author/ledger"},"image":["https://ledger-wp-website-s3-prd.ledger.com/uploads/2022/11/11_Classroom_Thumb-2.jpg"],"description":"KEY TAKEAWAYS: \u2014 Every blockchain address has both a public key and a private key. \u2014 A public and private key will be generated every time you create a new blockchain address. \u2014 The public key allows other users to find and transact with you; the ..."}</script>
+<style id="wp-custom-css">
+/* Default template */
+.page-template-default #header {
+	position: relative;
+}
+.page-template-default #main > .row {
+	margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  max-width: 900px;
+	margin-bottom: 40px;
+	transition: all .2s;
+}
+@media screen and (min-width: 769px) {
+.page-template-default #main > .row {
+  width: 65%;
+	margin-bottom: 80px;
+}
+.page-template-default #main > .row h1 {
+		font-size: 5.2rem;
+	}
+}
+.page-template-default #main > .row p:not([class^=margin-]) {
+    margin: 20px 0;
+}
+.page-template-default #main > .row ol[type='a'] li {
+	list-style-type:  lower-alpha;
+}
+/**/
+
+/* Coockies */
+.ot-sdk-show-settings,
+.ot-sdk-show-settings:hover, 
+.ot-sdk-show-settings:visited {
+	background: transparent!important;
+	border: 0!important;
+	color: #949494!important;
+	font-size: 1.3rem!important;
+	font-weight: 400!important;
+	padding: 0!important;
+	font-family: inherit!important;
+}
+#onetrust-banner-sdk #onetrust-reject-all-handler,
+#onetrust-banner-sdk .cookie-setting-link {
+	opacity: 1!important;
+	box-shadow: none!important;
+	outline: none!important;
+	background: none!important;
+	color: #000!important;
+	border: 0!important;
+	text-decoration: none!important;
+}
+/**/
+
+
+/* Video on academy */
+.academy.academy-article .row iframe { min-height: 450px; }
+
+.single-post .global-container .article .has-background {
+	padding: 15px 20px;
+	border-radius: 4px;
+	display: block;
+	background-color: rgba(255,255,255,.3)!important;
+}
+
+
+.bg-black .row a.read-more {
+	color: inherit;
+}
+
+/* stars on wallet pages */
+.single-crypto .bloc-text.card .icon-star:before {
+	content: "\e9b6";
+}
+
+
+/* Homepage Banners */
+.homepage picture img { display: block; }
+
+/* BLACK FRIDAY TEMP FIX */
+.homepage .ledger-home-variantA .illustration {
+	background-color: #000;
+}
+
+.ledger-card .small-text {
+	color: #FF5300!important;
+}
+
+.integrations-block-1, .integrations-block-2 {
+	overflow: hidden;
+}
+
+</style>
+
+  <style id="wp-block-heading-inline-css">
+h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-background,h3:where(.wp-block-heading).has-background,h4:where(.wp-block-heading).has-background,h5:where(.wp-block-heading).has-background,h6:where(.wp-block-heading).has-background{padding:1.25em 2.375em}h1.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h1.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h2.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h2.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h3.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h3.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h4.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h4.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h5.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h5.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h6.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h6.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]){rotate:180deg}
+/*# sourceURL=https://www.ledger.com/wp-includes/blocks/heading/style.min.css */
+</style>
+<style id="wp-block-image-inline-css">
+.wp-block-image>a,.wp-block-image>figure>a{display:inline-block}.wp-block-image img{box-sizing:border-box;height:auto;max-width:100%;vertical-align:bottom}@media not (prefers-reduced-motion){.wp-block-image img.hide{visibility:hidden}.wp-block-image img.show{animation:show-content-image .4s}}.wp-block-image[style*=border-radius] img,.wp-block-image[style*=border-radius]>a{border-radius:inherit}.wp-block-image.has-custom-border img{box-sizing:border-box}.wp-block-image.aligncenter{text-align:center}.wp-block-image.alignfull>a,.wp-block-image.alignwide>a{width:100%}.wp-block-image.alignfull img,.wp-block-image.alignwide img{height:auto;width:100%}.wp-block-image .aligncenter,.wp-block-image .alignleft,.wp-block-image .alignright,.wp-block-image.aligncenter,.wp-block-image.alignleft,.wp-block-image.alignright{display:table}.wp-block-image .aligncenter>figcaption,.wp-block-image .alignleft>figcaption,.wp-block-image .alignright>figcaption,.wp-block-image.aligncenter>figcaption,.wp-block-image.alignleft>figcaption,.wp-block-image.alignright>figcaption{caption-side:bottom;display:table-caption}.wp-block-image .alignleft{float:left;margin:.5em 1em .5em 0}.wp-block-image .alignright{float:right;margin:.5em 0 .5em 1em}.wp-block-image .aligncenter{margin-left:auto;margin-right:auto}.wp-block-image :where(figcaption){margin-bottom:1em;margin-top:.5em}.wp-block-image.is-style-circle-mask img{border-radius:9999px}@supports ((-webkit-mask-image:none) or (mask-image:none)) or (-webkit-mask-image:none){.wp-block-image.is-style-circle-mask img{border-radius:0;-webkit-mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-mode:alpha;-webkit-mask-position:center;mask-position:center;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain;mask-size:contain}}:root :where(.wp-block-image.is-style-rounded img,.wp-block-image .is-style-rounded img){border-radius:9999px}.wp-block-image figure{margin:0}.wp-lightbox-container{display:flex;flex-direction:column;position:relative}.wp-lightbox-container img{cursor:zoom-in}.wp-lightbox-container img:hover+button{opacity:1}.wp-lightbox-container button{align-items:center;backdrop-filter:blur(16px) saturate(180%);background-color:#5a5a5a40;border:none;border-radius:4px;cursor:zoom-in;display:flex;height:20px;justify-content:center;opacity:0;padding:0;position:absolute;right:16px;text-align:center;top:16px;width:20px;z-index:100}@media not (prefers-reduced-motion){.wp-lightbox-container button{transition:opacity .2s ease}}.wp-lightbox-container button:focus-visible{outline:3px auto #5a5a5a40;outline:3px auto -webkit-focus-ring-color;outline-offset:3px}.wp-lightbox-container button:hover{cursor:pointer;opacity:1}.wp-lightbox-container button:focus{opacity:1}.wp-lightbox-container button:focus,.wp-lightbox-container button:hover,.wp-lightbox-container button:not(:hover):not(:active):not(.has-background){background-color:#5a5a5a40;border:none}.wp-lightbox-overlay{box-sizing:border-box;cursor:zoom-out;height:100vh;left:0;overflow:hidden;position:fixed;top:0;visibility:hidden;width:100%;z-index:100000}.wp-lightbox-overlay .wp-lightbox-close-button{align-items:center;cursor:pointer;display:flex;font-family:inherit;gap:8px;justify-content:center;line-height:1;min-height:40px;min-width:40px;padding:0 4px;position:absolute;right:calc(env(safe-area-inset-right) + 16px);top:calc(env(safe-area-inset-top) + 16px);z-index:5000000}.wp-lightbox-overlay .wp-lightbox-close-button:focus,.wp-lightbox-overlay .wp-lightbox-close-button:hover,.wp-lightbox-overlay .wp-lightbox-close-button:not(:hover):not(:active):not(.has-background){background:none;border:none}.wp-lightbox-overlay .wp-lightbox-close-button:has(.wp-lightbox-close-text:not([hidden])) .wp-lightbox-close-icon svg{height:1em;width:1em}.wp-lightbox-overlay .wp-lightbox-close-icon svg{display:block}.wp-lightbox-overlay .wp-lightbox-navigation-button-next,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{align-items:center;bottom:16px;cursor:pointer;display:flex;font-family:inherit;gap:4px;justify-content:center;line-height:1;min-height:40px;min-width:40px;padding:0 8px;position:absolute;z-index:2000002}.wp-lightbox-overlay .wp-lightbox-navigation-button-next[hidden],.wp-lightbox-overlay .wp-lightbox-navigation-button-prev[hidden]{display:none}@media (min-width:960px){.wp-lightbox-overlay .wp-lightbox-navigation-button-next,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{bottom:50%;transform:translateY(-50%)}}.wp-lightbox-overlay .wp-lightbox-navigation-button-next:focus,.wp-lightbox-overlay .wp-lightbox-navigation-button-next:hover,.wp-lightbox-overlay .wp-lightbox-navigation-button-next:not(:hover):not(:active):not(.has-background),.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:focus,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:hover,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:not(:hover):not(:active):not(.has-background){background:none;border:none;padding:0 8px}.wp-lightbox-overlay .wp-lightbox-navigation-button-next:has(.wp-lightbox-navigation-text:not([hidden])) .wp-lightbox-navigation-icon svg,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:has(.wp-lightbox-navigation-text:not([hidden])) .wp-lightbox-navigation-icon svg{display:block;height:1.5em;width:1.5em}.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{left:calc(env(safe-area-inset-left) + 16px)}.wp-lightbox-overlay .wp-lightbox-navigation-button-next{right:calc(env(safe-area-inset-right) + 16px)}.wp-lightbox-overlay .wp-lightbox-navigation-icon svg{vertical-align:middle}.wp-lightbox-overlay .lightbox-image-container{height:var(--wp--lightbox-container-height);left:50%;overflow:hidden;position:absolute;top:50%;transform:translate(-50%,-50%);transform-origin:top left;width:var(--wp--lightbox-container-width);z-index:2000001}.wp-lightbox-overlay .wp-block-image{align-items:center;box-sizing:border-box;display:flex;height:100%;justify-content:center;margin:0;position:relative;transform-origin:0 0;width:100%;z-index:3000000}.wp-lightbox-overlay .wp-block-image img{height:var(--wp--lightbox-image-height);min-height:var(--wp--lightbox-image-height);min-width:var(--wp--lightbox-image-width);width:var(--wp--lightbox-image-width)}.wp-lightbox-overlay .wp-block-image figcaption{display:none}.wp-lightbox-overlay button{background:none;border:none}.wp-lightbox-overlay .scrim{background-color:#fff;height:100%;opacity:.9;position:absolute;width:100%;z-index:2000000}.wp-lightbox-overlay.active{visibility:visible}@media not (prefers-reduced-motion){.wp-lightbox-overlay.active{animation:turn-on-visibility .25s both}.wp-lightbox-overlay.active img{animation:turn-on-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active){animation:turn-off-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active) img{animation:turn-off-visibility .25s both}.wp-lightbox-overlay.zoom.active{animation:none;opacity:1;visibility:visible}.wp-lightbox-overlay.zoom.active .lightbox-image-container{animation:lightbox-zoom-in .4s}.wp-lightbox-overlay.zoom.active .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.active .scrim{animation:turn-on-visibility .4s forwards}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active){animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container{animation:lightbox-zoom-out .4s}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .scrim{animation:turn-off-visibility .4s forwards}}@keyframes show-content-image{0%{visibility:hidden}99%{visibility:hidden}to{visibility:visible}}@keyframes turn-on-visibility{0%{opacity:0}to{opacity:1}}@keyframes turn-off-visibility{0%{opacity:1;visibility:visible}99%{opacity:0;visibility:visible}to{opacity:0;visibility:hidden}}@keyframes lightbox-zoom-in{0%{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale))}to{transform:translate(-50%,-50%) scale(1)}}@keyframes lightbox-zoom-out{0%{transform:translate(-50%,-50%) scale(1);visibility:visible}99%{visibility:visible}to{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale));visibility:hidden}}
+/*# sourceURL=https://www.ledger.com/wp-includes/blocks/image/style.min.css */
+</style>
+<style id="wp-block-list-inline-css">
+ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:1.25em 2.375em}
+/*# sourceURL=https://www.ledger.com/wp-includes/blocks/list/style.min.css */
+</style>
+<style id="wp-block-paragraph-inline-css">
+.is-small-text{font-size:.875em}.is-regular-text{font-size:1em}.is-large-text{font-size:2.25em}.is-larger-text{font-size:3em}.has-drop-cap:not(:focus):first-letter{float:left;font-size:8.4em;font-style:normal;font-weight:100;line-height:.68;margin:.05em .1em 0 0;text-transform:uppercase}body.rtl .has-drop-cap:not(:focus):first-letter{float:none;margin-left:.1em}p.has-drop-cap.has-background{overflow:hidden}:root :where(p.has-background){padding:1.25em 2.375em}:where(p.has-text-color:not(.has-link-color)) a{color:inherit}p.has-text-align-left[style*="writing-mode:vertical-lr"],p.has-text-align-right[style*="writing-mode:vertical-rl"]{rotate:180deg}
+/*# sourceURL=https://www.ledger.com/wp-includes/blocks/paragraph/style.min.css */
+</style>
+<style id="wp-block-separator-inline-css">
+@charset "UTF-8";.wp-block-separator{border:none;border-top:2px solid}:root :where(.wp-block-separator.is-style-dots){height:auto;line-height:1;text-align:center}:root :where(.wp-block-separator.is-style-dots):before{color:currentColor;content:"···";font-family:serif;font-size:1.5em;letter-spacing:2em;padding-left:2em}.wp-block-separator.is-style-dots{background:none!important;border:none!important}
+/*# sourceURL=https://www.ledger.com/wp-includes/blocks/separator/style.min.css */
+</style>
+<style id="wp-block-table-inline-css">
+.wp-block-table{overflow-x:auto}.wp-block-table table{border-collapse:collapse;width:100%}.wp-block-table thead{border-bottom:3px solid}.wp-block-table tfoot{border-top:3px solid}.wp-block-table td,.wp-block-table th{border:1px solid;padding:.5em}.wp-block-table .has-fixed-layout{table-layout:fixed;width:100%}.wp-block-table .has-fixed-layout td,.wp-block-table .has-fixed-layout th{word-break:break-word}.wp-block-table.aligncenter,.wp-block-table.alignleft,.wp-block-table.alignright{display:table;width:auto}.wp-block-table.aligncenter td,.wp-block-table.aligncenter th,.wp-block-table.alignleft td,.wp-block-table.alignleft th,.wp-block-table.alignright td,.wp-block-table.alignright th{word-break:break-word}.wp-block-table .has-subtle-light-gray-background-color{background-color:#f3f4f5}.wp-block-table .has-subtle-pale-green-background-color{background-color:#e9fbe5}.wp-block-table .has-subtle-pale-blue-background-color{background-color:#e7f5fe}.wp-block-table .has-subtle-pale-pink-background-color{background-color:#fcf0ef}.wp-block-table.is-style-stripes{background-color:initial;border-collapse:inherit;border-spacing:0}.wp-block-table.is-style-stripes tbody tr:nth-child(odd){background-color:#f0f0f0}.wp-block-table.is-style-stripes.has-subtle-light-gray-background-color tbody tr:nth-child(odd){background-color:#f3f4f5}.wp-block-table.is-style-stripes.has-subtle-pale-green-background-color tbody tr:nth-child(odd){background-color:#e9fbe5}.wp-block-table.is-style-stripes.has-subtle-pale-blue-background-color tbody tr:nth-child(odd){background-color:#e7f5fe}.wp-block-table.is-style-stripes.has-subtle-pale-pink-background-color tbody tr:nth-child(odd){background-color:#fcf0ef}.wp-block-table.is-style-stripes td,.wp-block-table.is-style-stripes th{border-color:#0000}.wp-block-table.is-style-stripes{border-bottom:1px solid #f0f0f0}.wp-block-table .has-border-color td,.wp-block-table .has-border-color th,.wp-block-table .has-border-color tr,.wp-block-table .has-border-color>*{border-color:inherit}.wp-block-table table[style*=border-top-color] tr:first-child,.wp-block-table table[style*=border-top-color] tr:first-child td,.wp-block-table table[style*=border-top-color] tr:first-child th,.wp-block-table table[style*=border-top-color]>*,.wp-block-table table[style*=border-top-color]>* td,.wp-block-table table[style*=border-top-color]>* th{border-top-color:inherit}.wp-block-table table[style*=border-top-color] tr:not(:first-child){border-top-color:initial}.wp-block-table table[style*=border-right-color] td:last-child,.wp-block-table table[style*=border-right-color] th,.wp-block-table table[style*=border-right-color] tr,.wp-block-table table[style*=border-right-color]>*{border-right-color:inherit}.wp-block-table table[style*=border-bottom-color] tr:last-child,.wp-block-table table[style*=border-bottom-color] tr:last-child td,.wp-block-table table[style*=border-bottom-color] tr:last-child th,.wp-block-table table[style*=border-bottom-color]>*,.wp-block-table table[style*=border-bottom-color]>* td,.wp-block-table table[style*=border-bottom-color]>* th{border-bottom-color:inherit}.wp-block-table table[style*=border-bottom-color] tr:not(:last-child){border-bottom-color:initial}.wp-block-table table[style*=border-left-color] td:first-child,.wp-block-table table[style*=border-left-color] th,.wp-block-table table[style*=border-left-color] tr,.wp-block-table table[style*=border-left-color]>*{border-left-color:inherit}.wp-block-table table[style*=border-style] td,.wp-block-table table[style*=border-style] th,.wp-block-table table[style*=border-style] tr,.wp-block-table table[style*=border-style]>*{border-style:inherit}.wp-block-table table[style*=border-width] td,.wp-block-table table[style*=border-width] th,.wp-block-table table[style*=border-width] tr,.wp-block-table table[style*=border-width]>*{border-style:inherit;border-width:inherit}
+/*# sourceURL=https://www.ledger.com/wp-includes/blocks/table/style.min.css */
+</style>
+
+</head>
+
+<body class="wp-singular academy-template-default single single-academy postid-238273 wp-theme-ledger-v2">
+        <a  href="https://shop.ledger.com/pages/switch-to-ledger" class="header-top-banner">
+    <div class="header-top-banner--container">
+        <div class="row">
+            <div class="header-top-banner--text" >
+                <p>Switching hardware wallets? Migrate to Ledger safely in a few steps.</p>
+            </div>
+            <div class="header-top-banner--button">
+                <span>Learn more</span>
+            </div>
+        </div>
+    </div>
+</a>
+<header class="academy-header" id="header">
+  <div class="row">
+    <a href="../academy.html" title="Ledger Academy" class="logo">
+      <img src="../wp-content/themes/ledger-v2/public/images/ledger-academy-logo-long.html" alt="Ledger Academy">
+    </a>
+
+    <nav class="academy-header-navigation" id="academy-header-navigation">
+      <ul>
+                  <li>
+            <a target="_blank" href="https://shop.ledger.com/" title="">
+                              Shop Ledger
+                          </a>
+          </li>
+                  <li>
+            <a target="_blank" href="https://quest.ledger.com/" title="">
+                              Ledger Quest
+                <div class="svg-icon">
+                  <svg id="Calque_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 422.6 380.21"><path d="m164.29,23.94H23.94v84.02H0V0h164.29v23.94ZM0,272.24h23.94v84.02h140.36v23.95H0v-107.96Z"/><path d="m150.28,190.1c0-54.68,22.06-84.49,61.26-84.49s60.79,29.8,60.79,84.49c0,48.82-17.84,78.39-50.22,83.79l.23,28.87h-21.59l.24-29.1c-32.39-5.16-50.7-34.96-50.7-83.55Zm50.7,61.26l-.24-35.44h21.59l-.23,35.44c16.19-1.88,23.94-11.03,23.94-39.2v-44.13c0-32.85-10.56-39.66-32.39-39.66h-4.69c-21.82,0-32.38,6.81-32.38,39.66v44.13c0,28.4,7.98,37.31,24.4,39.2Z"/><path d="m398.67,23.94h-140.35V0h164.28v107.95h-23.94V23.94Zm-140.35,332.33h140.35v-84.02h23.94v107.96h-164.28v-23.95Z"/></svg>
+                </div>
+                          </a>
+          </li>
+                  <li>
+            <a  href="library.html" title="">
+                              Search <i class="icon-search"></i>
+                          </a>
+          </li>
+                  <li>
+            <a  href="glossary.html" title="">
+                              Crypto Glossary
+                          </a>
+          </li>
+                <li class="has-children">
+          <a href="#" title="">Topics</a>
+                              <ul>
+                          <li><a href="library/topic/agentic-ai.html" title="">Agentic AI</a></li>
+                          <li><a href="library/topic/blockchain.html" title="">Blockchain</a></li>
+                          <li><a href="library/topic/country-guides.html" title="">Country Guides</a></li>
+                          <li><a href="library/topic/crypto.html" title="">Crypto</a></li>
+                          <li><a href="library/topic/defi.html" title="">DeFi</a></li>
+                          <li><a href="library/topic/digital-identity.html" title="">Digital Identity</a></li>
+                          <li><a href="library/topic/economics-and-regulation.html" title="">Economics and Regulation</a></li>
+                          <li><a href="library/topic/ledgersolutions.html" title="">Ledger solutions</a></li>
+                          <li><a href="library/topic/ledger-wallet.html" title="">Ledger Wallet</a></li>
+                          <li><a href="library/topic/scams.html" title="">Scams</a></li>
+                          <li><a href="library/topic/security.html" title="">Security</a></li>
+                          <li><a href="library/topic/trading-prediction-markets.html" title="">Trading &amp; Prediction Markets</a></li>
+                      </ul>
+        </li>        
+        <li class="has-children">
+          <a href="#" title="">Series</a>
+                              <ul>
+                                                      <li><a href="series/enter-the-donjon.html" title="">Enter The Donjon</a></li>
+                                                                    <li><a href="series/rookie-to-pro.html" title="">From Rookie to Pro</a></li>
+                                                                    <li><a href="series/how-i-got-hacked.html" title="">How I Got Hacked</a></li>
+                                                                    <li><a href="series/get-your-crypto-safe.html" title="">Keep Your Crypto Safe</a></li>
+                                                                                                                                                                                                                                    <li><a href="series/on-the-ledger.html" title="">The Ledger Podcast</a></li>
+                                    </ul>
+        </li>
+                  <li>
+            <a href="what-is-web-30-everything-you-need-to-know.html" title="" class="button secondary" data-trigger-academy-start-journey data-trigger-academy-start-journey-location="Header">Start learning</a>
+          </li>
+                    
+    <!-- List Version -->
+    <li class="has-children language-switcher language-list">
+        <a href="#" class="activeLanguage" data-isocode="en" onclick="return false;">
+            <span class="activeLanguage__header">en</span>
+            <span class="activeLanguage__generic">English</span>
+        </a>
+        <ul class="submenu">
+                                                                                                            <li>
+                            <a href="../fr/academy/quest-ce-quune-cle-priveenbsp.html" title="" data-name="French" data-isocode="fr" class="localeItem">
+                                Français
+                            </a>
+                        </li>
+                                                                                <li>
+                            <a href="../tr/academy/ozel-anahtar-nedir.html" title="" data-name="Turkish" data-isocode="tr" class="localeItem">
+                                Türkçe
+                            </a>
+                        </li>
+                                                                                <li>
+                            <a href="../de/academy/basic-basics/owning-and-using-it/was-ist-ein-privater-schluessel-2.html" title="" data-name="German" data-isocode="de" class="localeItem">
+                                Deutsch
+                            </a>
+                        </li>
+                                                                                <li>
+                            <a href="../pt-br/academy/basic-basics/owning-and-using-it-pt-br-2/o-que-e-uma-chave-privada.html" title="" data-name="Portuguese (Brazil)" data-isocode="pt-br" class="localeItem">
+                                Português
+                            </a>
+                        </li>
+                                                                                <li>
+                            <a href="../es/academy/que-es-una-clave-privada.html" title="" data-name="Spanish" data-isocode="es" class="localeItem">
+                                Español
+                            </a>
+                        </li>
+                                                                                <li>
+                            <a href="../ru/academy/2-%d0%ba%d0%b0%d0%ba-%d0%bf%d1%80%d0%b0%d0%b2%d0%b8%d0%bb%d1%8c%d0%bd%d0%be-%d0%b2%d0%bb%d0%b0%d0%b4%d0%b5%d1%82%d1%8c-%d0%ba%d1%80%d0%b8%d0%bf%d1%82%d0%be%d0%b0%d0%ba%d1%82%d0%b8%d0%b2%d0%b0%d0%bc/%d1%87%d1%82%d0%be-%d1%82%d0%b0%d0%ba%d0%be%d0%b5-%d0%bf%d1%80%d0%b8%d0%b2%d0%b0%d1%82%d0%bd%d1%8b%d0%b9-%d0%ba%d0%bb%d1%8e%d1%87-2.html" title="" data-name="Russian" data-isocode="ru" class="localeItem">
+                                Русский
+                            </a>
+                        </li>
+                                                                                <li>
+                            <a href="../zh-hans/academy/%e4%bb%80%e4%b9%88%e6%98%af%e7%a7%81%e9%92%a5.html" title="" data-name="Chinese (Simplified)" data-isocode="zh-hans" class="localeItem">
+                                简体中文
+                            </a>
+                        </li>
+                                                                                <li>
+                            <a href="../ja/academy/%e7%a7%98%e5%af%86%e9%8d%b5%e3%81%a8%e3%81%af.html" title="" data-name="Japanese" data-isocode="ja" class="localeItem">
+                                日本語
+                            </a>
+                        </li>
+                                                                                <li>
+                            <a href="../ko/academy/%ea%b0%9c%ec%9d%b8-%ed%82%a4%eb%8a%94-%eb%ac%b4%ec%97%87%ec%9d%b8%ea%b0%80%ec%9a%94.html" title="" data-name="Korean" data-isocode="ko" class="localeItem">
+                                한국어
+                            </a>
+                        </li>
+                                                                                <li>
+                            <a href="../ar/academy/basic-basics/owning-and-using-it/%d9%85%d8%a7-%d9%87%d9%88-%d8%a7%d9%84%d9%85%d9%81%d8%aa%d8%a7%d8%ad-%d8%a7%d9%84%d8%ae%d8%a7%d8%b5-2.html" title="" data-name="Arabic" data-isocode="ar" class="localeItem">
+                                العربية
+                            </a>
+                        </li>
+                                                                                <li>
+                            <a href="../th/academy/owning-and-using-it-th-2/whats-a-private-key.html" title="" data-name="Thai" data-isocode="th" class="localeItem">
+                                ภาษาไทย
+                            </a>
+                        </li>
+                                                        </ul>
+    </li>
+
+    <!-- Select Dropdown Version -->
+    <div class="language-select language-switcher">
+        <select class="activeLanguage language-dropdown" onchange="window.location.href=this.value" data-isocode="en">
+            <option class="activeLanguage__header" value="#" disabled selected>English</option>
+            
+                                                                                                            <option value="https://www.ledger.com/fr/academy/quest-ce-quune-cle-priveenbsp" data-name="French" data-isocode="fr">
+                            Français
+                        </option>
+                                                                                <option value="https://www.ledger.com/tr/academy/ozel-anahtar-nedir" data-name="Turkish" data-isocode="tr">
+                            Türkçe
+                        </option>
+                                                                                <option value="https://www.ledger.com/de/academy/basic-basics/owning-and-using-it/was-ist-ein-privater-schluessel-2" data-name="German" data-isocode="de">
+                            Deutsch
+                        </option>
+                                                                                <option value="https://www.ledger.com/pt-br/academy/basic-basics/owning-and-using-it-pt-br-2/o-que-e-uma-chave-privada" data-name="Portuguese (Brazil)" data-isocode="pt-br">
+                            Português
+                        </option>
+                                                                                <option value="https://www.ledger.com/es/academy/que-es-una-clave-privada" data-name="Spanish" data-isocode="es">
+                            Español
+                        </option>
+                                                                                <option value="https://www.ledger.com/ru/academy/2-%D0%BA%D0%B0%D0%BA-%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE-%D0%B2%D0%BB%D0%B0%D0%B4%D0%B5%D1%82%D1%8C-%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%B0%D0%BC/%D1%87%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-%D0%BF%D1%80%D0%B8%D0%B2%D0%B0%D1%82%D0%BD%D1%8B%D0%B9-%D0%BA%D0%BB%D1%8E%D1%87-2" data-name="Russian" data-isocode="ru">
+                            Русский
+                        </option>
+                                                                                <option value="https://www.ledger.com/zh-hans/academy/%E4%BB%80%E4%B9%88%E6%98%AF%E7%A7%81%E9%92%A5" data-name="Chinese (Simplified)" data-isocode="zh-hans">
+                            简体中文
+                        </option>
+                                                                                <option value="https://www.ledger.com/ja/academy/%E7%A7%98%E5%AF%86%E9%8D%B5%E3%81%A8%E3%81%AF" data-name="Japanese" data-isocode="ja">
+                            日本語
+                        </option>
+                                                                                <option value="https://www.ledger.com/ko/academy/%EA%B0%9C%EC%9D%B8-%ED%82%A4%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94" data-name="Korean" data-isocode="ko">
+                            한국어
+                        </option>
+                                                                                <option value="https://www.ledger.com/ar/academy/basic-basics/owning-and-using-it/%D9%85%D8%A7-%D9%87%D9%88-%D8%A7%D9%84%D9%85%D9%81%D8%AA%D8%A7%D8%AD-%D8%A7%D9%84%D8%AE%D8%A7%D8%B5-2" data-name="Arabic" data-isocode="ar">
+                            العربية
+                        </option>
+                                                                                <option value="https://www.ledger.com/th/academy/owning-and-using-it-th-2/whats-a-private-key" data-name="Thai" data-isocode="th">
+                            ภาษาไทย
+                        </option>
+                                                        </select>
+    </div>
+</li>
+      </ul>
+    </nav>
+
+    <div id="open-menu-mobile" class="icon-stream open-menu-mobile"></div>
+    
+  </div>
+</header>
+
+<div class="academy-sidebar-menu" id="academy-sidebar-menu">
+  <div>
+          <nav>
+        <ul>
+                      <li class="has-children current-category-active">
+              <a >The Classroom <i class="icon-chevron-bottom"></i></a>
+
+                              <ul>
+                                    <li>
+                    <a  >A) Welcome to Web3</a>
+                                        <ul>
+                                            <li><a href="what-is-web-30-everything-you-need-to-know.html" title="What is Web 3.0?" >What is Web 3.0?</a></li>
+                                            <li><a href="what-is-blockchain.html" title="What Is Blockchain?" >What Is Blockchain?</a></li>
+                                            <li><a href="blockchain-generations-explained.html" title="Blockchain: Where It Started, Where It&#8217;s Going" >Blockchain: Where It Started, Where It&#8217;s Going</a></li>
+                                            <li><a href="what-is-cryptocurrency.html" title="What Is Cryptocurrency?" >What Is Cryptocurrency?</a></li>
+                                            <li><a href="how-many-cryptos-are-there.html" title="How Many Cryptocurrencies Are There?" >How Many Cryptocurrencies Are There?</a></li>
+                                          </ul>
+                                      </li>
+                                    <li>
+                    <a  >B) How to secure your crypto</a>
+                                        <ul>
+                                            <li><a href="whats-a-private-key.html" title="What Is a Private Key?" class="color-grey-800">What Is a Private Key?</a></li>
+                                            <li><a href="basic-basics/2-how-to-own-crypto/what-is-a-crypto-wallet.html" title="What Is A Crypto Wallet?" >What Is A Crypto Wallet?</a></li>
+                                            <li><a href="basic-basics/2-how-to-own-crypto/whats-a-secret-recovery-phrase.html" title="What is a Seed Phrase (Secret Recovery Phrase)?" >What is a Seed Phrase (Secret Recovery Phrase)?</a></li>
+                                            <li><a href="basic-basics/2-how-to-own-crypto/how-crypto-gets-stolen-risks-to-beware-of.html" title="Crypto Threats: How Crypto Gets Stolen" >Crypto Threats: How Crypto Gets Stolen</a></li>
+                                          </ul>
+                                      </li>
+                                    <li>
+                    <a  >C) What is Ledger?</a>
+                                        <ul>
+                                            <li><a href="ledger-nano-the-safest-way-to-manage-crypto.html" title="What is Ledger? The Ledger Ecosystem Explained" >What is Ledger? The Ledger Ecosystem Explained</a></li>
+                                            <li><a href="basic-basics/ledgers-ecosystem/why-is-ledger-nano-so-secure.html" title="Ledger&#8217;s Security Model: How Are Ledger Signers Secured?" >Ledger&#8217;s Security Model: How Are Ledger Signers Secured?</a></li>
+                                            <li><a href="basic-basics/ledgers-ecosystem/ledger-live-app-buying-selling-staking-and-swapping-crypto.html" title="Ledger Wallet™ : Buy, Sell, Stake and Swap Crypto" >Ledger Wallet™ : Buy, Sell, Stake and Swap Crypto</a></li>
+                                          </ul>
+                                      </li>
+                                    <li>
+                    <a  >D) Web3 security essentials</a>
+                                        <ul>
+                                            <li><a href="basic-basics/web3-security-essentials/web3-scams-explained.html" title="Web3 Scams: Common Crypto Scams and How To Avoid Them" >Web3 Scams: Common Crypto Scams and How To Avoid Them</a></li>
+                                            <li><a href="do-your-own-research-how-to-investigate-crypto-projects.html" title="Do Your Own Research (DYOR): How to Investigate Crypto Projects" >Do Your Own Research (DYOR): How to Investigate Crypto Projects</a></li>
+                                            <li><a href="basic-basics/web3-security-essentials/how-to-secure-your-crypto-on-a-ledger-nano.html" title="How to Migrate Your Crypto to Ledger" >How to Migrate Your Crypto to Ledger</a></li>
+                                          </ul>
+                                      </li>
+                                    <li>
+                    <a  >E) Digital Assets Explained</a>
+                                        <ul>
+                                            <li><a href="crypto/what-is-the-difference-between-coins-and-tokens.html" title="Crypto Coins and Tokens: Their Use-Cases Explained" >Crypto Coins and Tokens: Their Use-Cases Explained</a></li>
+                                            <li><a href="what-are-stablecoins.html" title="What Are Stablecoins?" >What Are Stablecoins?</a></li>
+                                            <li><a href="what-are-memecoins.html" title="What Are Memecoins?" >What Are Memecoins?</a></li>
+                                            <li><a href="topics/blockchain/digital-assets-beyond-currency-explained.html" title="Digital Assets Beyond Currency" >Digital Assets Beyond Currency</a></li>
+                                          </ul>
+                                      </li>
+                                    <li>
+                    <a  >F) Blockchain Basics</a>
+                                        <ul>
+                                            <li><a href="how-does-a-blockchain-transaction-work.html" title="How Does a Blockchain Transaction Work?" >How Does a Blockchain Transaction Work?</a></li>
+                                            <li><a href="what-is-a-node-and-why-should-i-operate-one.html" title="Crypto Nodes: What Are They And How Do They Work?" >Crypto Nodes: What Are They And How Do They Work?</a></li>
+                                            <li><a href="what-is-a-mempool.html" title="What Is a Mempool?" >What Is a Mempool?</a></li>
+                                            <li><a href="consensus-protocols-how-are-blockchains-secure.html" title="Consensus Mechanisms: How Blockchains Stay Secure" >Consensus Mechanisms: How Blockchains Stay Secure</a></li>
+                                          </ul>
+                                      </li>
+                                    <li>
+                    <a  >G) Wallet Knowledge (Leveling Up)</a>
+                                        <ul>
+                                            <li><a href="topics/security/what-is-a-software-wallet.html" title="What Is a Software Wallet?" >What Is a Software Wallet?</a></li>
+                                            <li><a href="crypto-hardware-wallet.html" title="What Is a Hardware Wallet?" >What Is a Hardware Wallet?</a></li>
+                                            <li><a href="topics/security/what-is-a-cold-wallet.html" title="What is a Cold Wallet? Top Cold Wallets in 2026" >What is a Cold Wallet? Top Cold Wallets in 2026</a></li>
+                                            <li><a href="topics/security/choose-the-best-crypto-wallet-for-you.html" title="How To Choose a Crypto Wallet" >How To Choose a Crypto Wallet</a></li>
+                                          </ul>
+                                      </li>
+                                    <li>
+                    <a  >H) Buy it, Sell it, Swap it, Earn it</a>
+                                        <ul>
+                                            <li><a href="the-power-of-ledger-live.html" title="Why Use Ledger Wallet For Payments and Transactions?" >Why Use Ledger Wallet For Payments and Transactions?</a></li>
+                                            <li><a href="benefits-of-buying-crypto-through-ledger-live.html" title="Buying Crypto Through Ledger Wallet" >Buying Crypto Through Ledger Wallet</a></li>
+                                            <li><a href="topics/ledgersolutions/ledger-swap-the-most-secure-way-to-exchange-your-crypto.html" title="How To Swap Your Crypto Securely Via Ledger Wallet" >How To Swap Your Crypto Securely Via Ledger Wallet</a></li>
+                                            <li><a href="earn-crypto-with-ledger-live-staking-made-easy.html" title="Earn Crypto With Ledger Wallet: Staking Made Easy" >Earn Crypto With Ledger Wallet: Staking Made Easy</a></li>
+                                          </ul>
+                                      </li>
+                                    <li>
+                    <a  >I) Blockchain Sleuthing: Become a Crypto Detective</a>
+                                        <ul>
+                                            <li><a href="basic-basics/become-a-crypto-detective/what-is-a-blockchain-sleuth.html" title="What is a Blockchain Sleuth?" >What is a Blockchain Sleuth?</a></li>
+                                            <li><a href="basic-basics/become-a-crypto-detective/top-blockchain-sleuths.html" title="Top Blockchain Sleuths: How 5 Crypto Detectives Rose To Fame" >Top Blockchain Sleuths: How 5 Crypto Detectives Rose To Fame</a></li>
+                                            <li><a href="basic-basics/become-a-crypto-detective/nomad-bridge-hack.html" title="Through the Eyes of a Sleuth: The Nomad Bridge Hack" >Through the Eyes of a Sleuth: The Nomad Bridge Hack</a></li>
+                                            <li><a href="basic-basics/become-a-crypto-detective/blockchain-detective-tools.html" title="Best Tools For Blockchain Detectives" >Best Tools For Blockchain Detectives</a></li>
+                                            <li><a href="basic-basics/become-a-crypto-detective/how-to-catch-crypto-criminals.html" title="How to Catch Criminals on the Blockchain" >How to Catch Criminals on the Blockchain</a></li>
+                                          </ul>
+                                      </li>
+                                    <li>
+                    <a  >J) Wallet Knowledge II - The Evolution of Crypto Storage</a>
+                                        <ul>
+                                            <li><a href="blockchain/what-are-public-keys-and-private-keys.html" title="Public Vs Private Keys: Understanding PKC in Crypto" >Public Vs Private Keys: Understanding PKC in Crypto</a></li>
+                                            <li><a href="crypto/what-are-hierarchical-deterministic-hd-wallets.html" title="BIP-32: Understanding Hierarchical Deterministic Wallets" >BIP-32: Understanding Hierarchical Deterministic Wallets</a></li>
+                                            <li><a href="bip-39-the-low-key-guardian-of-your-crypto-freedom.html" title="Understanding BIP-39: The Origin of Your Seed Phrase" >Understanding BIP-39: The Origin of Your Seed Phrase</a></li>
+                                            <li><a href="how-does-a-crypto-wallet-work.html" title="How Does a Crypto Wallet Work?" >How Does a Crypto Wallet Work?</a></li>
+                                          </ul>
+                                      </li>
+                                    <li>
+                    <a  >K) Launch a Crypto Project Securely: Wallets, Socials, and Protecting Your People</a>
+                                        <ul>
+                                            <li><a href="basic-basics/launch-a-crypto-project-securely/launching-your-web3-community-safely.html" title="Launching Your Web3 Community Safely" >Launching Your Web3 Community Safely</a></li>
+                                            <li><a href="basic-basics/launch-a-crypto-project-securely/setting-up-a-secure-x-account-for-your-crypto-project.html" title="Setting up a Secure X Account For Your Crypto Project" >Setting up a Secure X Account For Your Crypto Project</a></li>
+                                            <li><a href="basic-basics/launch-a-crypto-project-securely/how-to-set-up-a-crypto-project-discord-server-securely.html" title="Setting Up Your Crypto Project&#8217;s Discord Server Securely" >Setting Up Your Crypto Project&#8217;s Discord Server Securely</a></li>
+                                            <li><a href="basic-basics/launch-a-crypto-project-securely/securely-managing-your-crypto-projects-wallets-and-treasuries.html" title="Securely Managing Your Crypto Project&#8217;s Wallets and Treasuries" >Securely Managing Your Crypto Project&#8217;s Wallets and Treasuries</a></li>
+                                            <li><a href="basic-basics/launch-a-crypto-project-securely/what-to-do-if-your-crypto-project-gets-hacked.html" title="What To Do If Your Crypto Project Gets Hacked" >What To Do If Your Crypto Project Gets Hacked</a></li>
+                                          </ul>
+                                      </li>
+                                    <li>
+                    <a  >L) Doing Your Own Research (DYOR)</a>
+                                        <ul>
+                                            <li><a href="basic-basics/l-doing-your-own-research-dyor/what-is-dyor.html" title="What Is DYOR?" >What Is DYOR?</a></li>
+                                            <li><a href="basic-basics/l-doing-your-own-research-dyor/identifying-reliable-sources-for-web-3-information.html" title="Identifying Reliable Sources for Web3 Information" >Identifying Reliable Sources for Web3 Information</a></li>
+                                            <li><a href="basic-basics/l-doing-your-own-research-dyor/zooming-into-project-teams-founders.html" title="Zooming into Project Teams &amp; Founders" >Zooming into Project Teams &amp; Founders</a></li>
+                                            <li><a href="basic-basics/l-doing-your-own-research-dyor/introduction-to-smart-contract-risks.html" title="Introduction to Smart Contract Risks" >Introduction to Smart Contract Risks</a></li>
+                                            <li><a href="basic-basics/l-doing-your-own-research-dyor/understanding-tokenomics-and-its-impact-on-project-security.html" title="Understanding Tokenomics and Its Impact on Project Security" >Understanding Tokenomics and Its Impact on Project Security</a></li>
+                                          </ul>
+                                      </li>
+                                    <li>
+                    <a  >M) Bull Run Security 101</a>
+                                        <ul>
+                                            <li><a href="basic-basics/bull-run-security/how-ethereum-and-solana-tokens-work-approvals-permit-smart-accounts-and-eip-7702.html" title="How Ethereum and Solana Tokens Work:  Approvals, Permit, Smart Accounts, and EIP-7702" >How Ethereum and Solana Tokens Work:  Approvals, Permit, Smart Accounts, and EIP-7702</a></li>
+                                            <li><a href="basic-basics/bull-run-security/dyoring-the-memecoin-madness-must-know-tools.html" title="DYORing the Memecoin Madness: Must-know Tools" >DYORing the Memecoin Madness: Must-know Tools</a></li>
+                                            <li><a href="basic-basics/bull-run-security/bull-run-security-what-makes-it-different.html" title="Bull Run Security: What Makes It Different? " >Bull Run Security: What Makes It Different? </a></li>
+                                            <li><a href="basic-basics/bull-run-security/security-hygiene-a-bullrun-survival-checklist.html" title="Security Hygiene: a Bullrun Survival Checklist" >Security Hygiene: a Bullrun Survival Checklist</a></li>
+                                            <li><a href="basic-basics/bull-run-security/bull-run-scams-dissecting-a-rug-pull.html" title="Bull Run Scams: Dissecting a Rug Pull" >Bull Run Scams: Dissecting a Rug Pull</a></li>
+                                          </ul>
+                                      </li>
+                                  </ul>
+                          </li>
+                      <li class="has-children">
+              <a >Topics <i class="icon-chevron-bottom"></i></a>
+
+                              <ul>
+                                    <li>
+                    <a href="library/topic/agentic-ai.html" title="Agentic AI" >Agentic AI</a>
+                                      </li>
+                                    <li>
+                    <a href="library/topic/blockchain.html" title="Blockchain" >Blockchain</a>
+                                      </li>
+                                    <li>
+                    <a href="library/topic/country-guides.html" title="Country Guides" >Country Guides</a>
+                                      </li>
+                                    <li>
+                    <a href="library/topic/crypto.html" title="Crypto" >Crypto</a>
+                                      </li>
+                                    <li>
+                    <a href="library/topic/defi.html" title="DeFi" >DeFi</a>
+                                      </li>
+                                    <li>
+                    <a href="library/topic/digital-identity.html" title="Digital Identity" >Digital Identity</a>
+                                      </li>
+                                    <li>
+                    <a href="library/topic/economics-and-regulation.html" title="Economics and Regulation" >Economics and Regulation</a>
+                                      </li>
+                                    <li>
+                    <a href="library/topic/ledgersolutions.html" title="Ledger solutions" >Ledger solutions</a>
+                                      </li>
+                                    <li>
+                    <a href="library/topic/ledger-wallet.html" title="Ledger Wallet" >Ledger Wallet</a>
+                                      </li>
+                                    <li>
+                    <a href="library/topic/scams.html" title="Scams" >Scams</a>
+                                      </li>
+                                    <li>
+                    <a href="library/topic/security.html" title="Security" >Security</a>
+                                      </li>
+                                    <li>
+                    <a href="library/topic/trading-prediction-markets.html" title="Trading &amp; Prediction Markets" >Trading &amp; Prediction Markets</a>
+                                      </li>
+                                  </ul>
+                          </li>
+                      <li class="has-children">
+              <a >Series <i class="icon-chevron-bottom"></i></a>
+
+                              <ul>
+                                    <li>
+                    <a href="series/enter-the-donjon.html" title="Enter The Donjon" >Enter The Donjon</a>
+                                      </li>
+                                    <li>
+                    <a href="series/rookie-to-pro.html" title="From Rookie to Pro" >From Rookie to Pro</a>
+                                      </li>
+                                    <li>
+                    <a href="series/how-i-got-hacked.html" title="How I Got Hacked" >How I Got Hacked</a>
+                                      </li>
+                                    <li>
+                    <a href="series/get-your-crypto-safe.html" title="Keep Your Crypto Safe" >Keep Your Crypto Safe</a>
+                                      </li>
+                                    <li>
+                    <a href="series/on-the-ledger.html" title="The Ledger Podcast" >The Ledger Podcast</a>
+                                      </li>
+                                  </ul>
+                          </li>
+                                              <li>
+                <a target="_blank" href="https://shop.ledger.com/" title="Shop Ledger" class="a-shop-ledger">
+                                      Shop Ledger
+                                  </a>
+              </li>
+                          <li>
+                <a target="_blank" href="https://quest.ledger.com/" title="Ledger Quest" class="a-ledger-quest">
+                                      Ledger Quest
+                  <div class="svg-icon">
+                    <svg id="Calque_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 422.6 380.21"><path d="m164.29,23.94H23.94v84.02H0V0h164.29v23.94ZM0,272.24h23.94v84.02h140.36v23.95H0v-107.96Z"/><path d="m150.28,190.1c0-54.68,22.06-84.49,61.26-84.49s60.79,29.8,60.79,84.49c0,48.82-17.84,78.39-50.22,83.79l.23,28.87h-21.59l.24-29.1c-32.39-5.16-50.7-34.96-50.7-83.55Zm50.7,61.26l-.24-35.44h21.59l-.23,35.44c16.19-1.88,23.94-11.03,23.94-39.2v-44.13c0-32.85-10.56-39.66-32.39-39.66h-4.69c-21.82,0-32.38,6.81-32.38,39.66v44.13c0,28.4,7.98,37.31,24.4,39.2Z"/><path d="m398.67,23.94h-140.35V0h164.28v107.95h-23.94V23.94Zm-140.35,332.33h140.35v-84.02h23.94v107.96h-164.28v-23.95Z"/></svg>
+                  </div>
+                                  </a>
+              </li>
+                          <li>
+                <a  href="library.html" title="Search" class="a-search">
+                                      Search <i class="icon-search"></i>
+                                  </a>
+              </li>
+                          <li>
+                <a  href="glossary.html" title="Crypto Glossary" class="a-crypto-glossary">
+                                      Crypto Glossary
+                                  </a>
+              </li>
+                                    
+    <!-- List Version -->
+    <li class="has-children language-switcher language-list">
+        <a href="#" class="activeLanguage" data-isocode="en" onclick="return false;">
+            <span class="activeLanguage__header">en</span>
+            <span class="activeLanguage__generic">English</span>
+        </a>
+        <ul class="submenu">
+                                                                                                            <li>
+                            <a href="../fr/academy/quest-ce-quune-cle-priveenbsp.html" title="" data-name="French" data-isocode="fr" class="localeItem">
+                                Français
+                            </a>
+                        </li>
+                                                                                <li>
+                            <a href="../tr/academy/ozel-anahtar-nedir.html" title="" data-name="Turkish" data-isocode="tr" class="localeItem">
+                                Türkçe
+                            </a>
+                        </li>
+                                                                                <li>
+                            <a href="../de/academy/basic-basics/owning-and-using-it/was-ist-ein-privater-schluessel-2.html" title="" data-name="German" data-isocode="de" class="localeItem">
+                                Deutsch
+                            </a>
+                        </li>
+                                                                                <li>
+                            <a href="../pt-br/academy/basic-basics/owning-and-using-it-pt-br-2/o-que-e-uma-chave-privada.html" title="" data-name="Portuguese (Brazil)" data-isocode="pt-br" class="localeItem">
+                                Português
+                            </a>
+                        </li>
+                                                                                <li>
+                            <a href="../es/academy/que-es-una-clave-privada.html" title="" data-name="Spanish" data-isocode="es" class="localeItem">
+                                Español
+                            </a>
+                        </li>
+                                                                                <li>
+                            <a href="../ru/academy/2-%d0%ba%d0%b0%d0%ba-%d0%bf%d1%80%d0%b0%d0%b2%d0%b8%d0%bb%d1%8c%d0%bd%d0%be-%d0%b2%d0%bb%d0%b0%d0%b4%d0%b5%d1%82%d1%8c-%d0%ba%d1%80%d0%b8%d0%bf%d1%82%d0%be%d0%b0%d0%ba%d1%82%d0%b8%d0%b2%d0%b0%d0%bc/%d1%87%d1%82%d0%be-%d1%82%d0%b0%d0%ba%d0%be%d0%b5-%d0%bf%d1%80%d0%b8%d0%b2%d0%b0%d1%82%d0%bd%d1%8b%d0%b9-%d0%ba%d0%bb%d1%8e%d1%87-2.html" title="" data-name="Russian" data-isocode="ru" class="localeItem">
+                                Русский
+                            </a>
+                        </li>
+                                                                                <li>
+                            <a href="../zh-hans/academy/%e4%bb%80%e4%b9%88%e6%98%af%e7%a7%81%e9%92%a5.html" title="" data-name="Chinese (Simplified)" data-isocode="zh-hans" class="localeItem">
+                                简体中文
+                            </a>
+                        </li>
+                                                                                <li>
+                            <a href="../ja/academy/%e7%a7%98%e5%af%86%e9%8d%b5%e3%81%a8%e3%81%af.html" title="" data-name="Japanese" data-isocode="ja" class="localeItem">
+                                日本語
+                            </a>
+                        </li>
+                                                                                <li>
+                            <a href="../ko/academy/%ea%b0%9c%ec%9d%b8-%ed%82%a4%eb%8a%94-%eb%ac%b4%ec%97%87%ec%9d%b8%ea%b0%80%ec%9a%94.html" title="" data-name="Korean" data-isocode="ko" class="localeItem">
+                                한국어
+                            </a>
+                        </li>
+                                                                                <li>
+                            <a href="../ar/academy/basic-basics/owning-and-using-it/%d9%85%d8%a7-%d9%87%d9%88-%d8%a7%d9%84%d9%85%d9%81%d8%aa%d8%a7%d8%ad-%d8%a7%d9%84%d8%ae%d8%a7%d8%b5-2.html" title="" data-name="Arabic" data-isocode="ar" class="localeItem">
+                                العربية
+                            </a>
+                        </li>
+                                                                                <li>
+                            <a href="../th/academy/owning-and-using-it-th-2/whats-a-private-key.html" title="" data-name="Thai" data-isocode="th" class="localeItem">
+                                ภาษาไทย
+                            </a>
+                        </li>
+                                                        </ul>
+    </li>
+
+    <!-- Select Dropdown Version -->
+    <div class="language-select language-switcher">
+        <select class="activeLanguage language-dropdown" onchange="window.location.href=this.value" data-isocode="en">
+            <option class="activeLanguage__header" value="#" disabled selected>English</option>
+            
+                                                                                                            <option value="https://www.ledger.com/fr/academy/quest-ce-quune-cle-priveenbsp" data-name="French" data-isocode="fr">
+                            Français
+                        </option>
+                                                                                <option value="https://www.ledger.com/tr/academy/ozel-anahtar-nedir" data-name="Turkish" data-isocode="tr">
+                            Türkçe
+                        </option>
+                                                                                <option value="https://www.ledger.com/de/academy/basic-basics/owning-and-using-it/was-ist-ein-privater-schluessel-2" data-name="German" data-isocode="de">
+                            Deutsch
+                        </option>
+                                                                                <option value="https://www.ledger.com/pt-br/academy/basic-basics/owning-and-using-it-pt-br-2/o-que-e-uma-chave-privada" data-name="Portuguese (Brazil)" data-isocode="pt-br">
+                            Português
+                        </option>
+                                                                                <option value="https://www.ledger.com/es/academy/que-es-una-clave-privada" data-name="Spanish" data-isocode="es">
+                            Español
+                        </option>
+                                                                                <option value="https://www.ledger.com/ru/academy/2-%D0%BA%D0%B0%D0%BA-%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE-%D0%B2%D0%BB%D0%B0%D0%B4%D0%B5%D1%82%D1%8C-%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%B0%D0%BC/%D1%87%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-%D0%BF%D1%80%D0%B8%D0%B2%D0%B0%D1%82%D0%BD%D1%8B%D0%B9-%D0%BA%D0%BB%D1%8E%D1%87-2" data-name="Russian" data-isocode="ru">
+                            Русский
+                        </option>
+                                                                                <option value="https://www.ledger.com/zh-hans/academy/%E4%BB%80%E4%B9%88%E6%98%AF%E7%A7%81%E9%92%A5" data-name="Chinese (Simplified)" data-isocode="zh-hans">
+                            简体中文
+                        </option>
+                                                                                <option value="https://www.ledger.com/ja/academy/%E7%A7%98%E5%AF%86%E9%8D%B5%E3%81%A8%E3%81%AF" data-name="Japanese" data-isocode="ja">
+                            日本語
+                        </option>
+                                                                                <option value="https://www.ledger.com/ko/academy/%EA%B0%9C%EC%9D%B8-%ED%82%A4%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94" data-name="Korean" data-isocode="ko">
+                            한국어
+                        </option>
+                                                                                <option value="https://www.ledger.com/ar/academy/basic-basics/owning-and-using-it/%D9%85%D8%A7-%D9%87%D9%88-%D8%A7%D9%84%D9%85%D9%81%D8%AA%D8%A7%D8%AD-%D8%A7%D9%84%D8%AE%D8%A7%D8%B5-2" data-name="Arabic" data-isocode="ar">
+                            العربية
+                        </option>
+                                                                                <option value="https://www.ledger.com/th/academy/owning-and-using-it-th-2/whats-a-private-key" data-name="Thai" data-isocode="th">
+                            ภาษาไทย
+                        </option>
+                                                        </select>
+    </div>
+</li>
+        </ul>
+      </nav>
+    
+          <div class="bg-black campaign-banner">
+    <div class="row flexbox right campaign-banner-content no-margin-mobile ">
+                <div class="illustration" style="background-image:url(../../ledger-wp-website-s3-prd.ledger.com/uploads/2023/04/712x615.png)"></div> 
+                 <div class="row bg content">
+                            <p class="emphasis">Upgrade your digital life</p>
+                                        <p class="heading-3 margin-s">Ledger Wallet: Free from compromise</p>
+                                                                <a href="https://shop.ledger.com/pages/ledger-wallet#download-ledger-wallet" title="Download now" class="button secondary" data-campaigns-button>Download now</a>
+                                        <a href="../blog-release-notes-q2-2026-free-from-compromise.html" title="Learn more" class="read-more campaign-cta-2" data-campaigns-button>Learn more</a>
+                    </div>
+    </div>
+</div>
+
+    <script>
+        
+    </script>
+        <div class="side-menu-social-network align-center">
+      <a href="https://www.youtube.com/Ledger" title="Ledger Youtube" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+      <a href="https://twitter.com/Ledger" title="Ledger Twitter" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.reddit.com/r/ledgerwallet/" title="Ledger Reddit" target="_blank" rel="noopener"><i class="fab fa-reddit"></i></a>
+      <a href="https://www.facebook.com/Ledger/" title="Ledger Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.linkedin.com/company/ledgerhq" title="Ledger LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+    </div>
+
+  </div>
+</div>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var menuAcademyMobile = jQuery('.open-menu-mobile');
+
+    if(menuAcademyMobile) {
+      jQuery('.open-menu-mobile').on('click', function() {
+        jQuery(this).toggleClass('icon-stream icon-close');
+        jQuery("#header").toggleClass('open');
+        jQuery("#academy-sidebar-menu").toggleClass('open');
+      });
+      jQuery('#academy-sidebar-menu .has-children > a').on('click', function() {
+        jQuery(this).find('~ ul').toggle();
+        jQuery(this).toggleClass('current-category-active open-submenu');
+      });
+    }
+
+    // height size for sidebar on desktop
+    var contentHeight = jQuery('#main > .row').innerHeight();
+    var sideAdaptHeight = jQuery('#academy-sidebar-menu').height(contentHeight + 80);
+
+    // Menu on Sidebar position
+    const menuAligment = () => {
+      const windowWidth = jQuery(window).innerWidth(),
+            sideBarWidth = jQuery('#academy-sidebar-menu').innerWidth(),
+            contentWidth = jQuery('.content-container').innerWidth(),
+            
+            viewportHeight = jQuery(window).height(),
+            margin = (windowWidth - 1440) / 2;
+      if (windowWidth > 1440) {
+        const marginAR = jQuery('html').attr('lang') === 'ar' ? 'margin-right' : 'margin-left'; 
+        jQuery("#academy-sidebar-menu").css(marginAR, margin+'px');
+      }
+      if (windowWidth > 992) {
+        jQuery('#academy-sidebar-menu > *').css('height', viewportHeight);
+      }
+    }
+    menuAligment(); 
+    
+    jQuery(window).resize(function() {
+      menuAligment();
+    });
+
+  });
+</script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const campaignButtons = document.querySelectorAll('[data-campaigns-button]');
+      if (campaignButtons) {
+        campaignButtons.forEach(campaignButton => {
+          campaignButton.addEventListener('click', () => {
+            dataLayer.push({
+       'event' : 'GAEvent',
+       'eventCategory' : 'Engagement',
+       'eventAction' : 'clic banner',
+       'eventLabel' : 'campaign backup',
+       'eventValue' : 100
+     });
+          });
+        });
+      }
+    });
+  </script>
+
+  <main id="main" class="ldg-container academy academy-article">
+        
+  <div class="row">
+    
+
+        <div class="content-container">
+
+            <nav class="margin-sm breadcrumb">
+  <ul>
+                  <li >
+          <a href="../academy.html" title="Ledger Academy ">Ledger Academy </a>
+            <i class="icon-chevron-right"></i>
+        </li>
+      
+                  <li class="is-hidden-mobile is-hidden-tablet">
+          <a >B) How to secure your crypto</a>
+            <i class="icon-chevron-right"></i>
+        </li>
+      
+                          <li class="is-hidden-desktop">... <i class="icon-chevron-right"></i></li>
+                <li class="color-grey-800">What Is a Private Key?</li>
+      
+      </ul>
+</nav>
+
+              <div class="margin-s">
+          <p class="h4 margin-xxs">The Classroom</p>
+
+          <div class="margin-s uppercase caption flexbox space-between is-hidden-mobile">
+                        <p class="">PATHWAY B) How to secure your crypto</p>
+                                    <p class="left-on-mobile">chapter 1/4</p>
+                      </div>
+        </div>
+      
+            <article class="plain-text margin-sm article" id="article">
+        <h1 class="margin-xs">What Is a Private Key?</h1>
+
+
+                
+        
+
+        <div class="color-grey-500 small-text uppercase margin-xs article-date">
+          Nov 1, 2022
+          | <b>Updated Apr 9, 2026</b>
+        </div>
+
+                <div class="caption-for-article flexbox flex-start">
+                                <div class="flex-none time-to-read">
+                              <span class="badge badge-nude">
+                  <i class="icon-copy"></i> Read
+                </span>
+                            <span>6 min</span>
+            </div>
+                                          <div class="with-point level level-1">
+              <span>Beginner</span>
+            </div>
+                  </div>
+
+                <div class="align-center share-box" id="fixed-share-box">
+          <span>SHARE</span>
+           <div class="heateor_sss_sharing_container heateor_sss_horizontal_sharing" data-heateor-ss-offset="0" data-heateor-sss-href='https://www.ledger.com/academy/whats-a-private-key'><div class="heateor_sss_sharing_ul"><a aria-label="Instagram" class="heateor_sss_button_instagram" href="https://www.instagram.com/ledger" title="Instagram" rel="nofollow noopener" target="_blank" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle"><span class="heateor_sss_svg" style="background-color:#53beee;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;border-radius:999px;" version="1.1" viewBox="-10 -10 148 148" width="100%" height="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><g><path d="M86,112H42c-14.336,0-26-11.663-26-26V42c0-14.337,11.664-26,26-26h44c14.337,0,26,11.663,26,26v44 C112,100.337,100.337,112,86,112z M42,24c-9.925,0-18,8.074-18,18v44c0,9.925,8.075,18,18,18h44c9.926,0,18-8.075,18-18V42 c0-9.926-8.074-18-18-18H42z" fill="#fff"></path></g><g><path d="M64,88c-13.234,0-24-10.767-24-24c0-13.234,10.766-24,24-24s24,10.766,24,24C88,77.233,77.234,88,64,88z M64,48c-8.822,0-16,7.178-16,16s7.178,16,16,16c8.822,0,16-7.178,16-16S72.822,48,64,48z" fill="#fff"></path></g><g><circle cx="89.5" cy="38.5" fill="#fff" r="5.5"></circle></g></g></svg></span></a><a aria-label="Facebook" class="heateor_sss_facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fwhats-a-private-key" title="Facebook" rel="nofollow noopener" target="_blank" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle"><span class="heateor_sss_svg" style="background-color:#0765FE;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32"><path fill="#fff" d="M28 16c0-6.627-5.373-12-12-12S4 9.373 4 16c0 5.628 3.875 10.35 9.101 11.647v-7.98h-2.474V16H13.1v-1.58c0-4.085 1.849-5.978 5.859-5.978.76 0 2.072.15 2.608.298v3.325c-.283-.03-.775-.045-1.386-.045-1.967 0-2.728.745-2.728 2.683V16h3.92l-.673 3.667h-3.247v8.245C23.395 27.195 28 22.135 28 16Z"></path></svg></span></a><a aria-label="Linkedin" class="heateor_sss_button_linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fwhats-a-private-key" title="Linkedin" rel="nofollow noopener" target="_blank" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle"><span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_linkedin" style="background-color:#0077b5;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32"><path d="M6.227 12.61h4.19v13.48h-4.19V12.61zm2.095-6.7a2.43 2.43 0 0 1 0 4.86c-1.344 0-2.428-1.09-2.428-2.43s1.084-2.43 2.428-2.43m4.72 6.7h4.02v1.84h.058c.56-1.058 1.927-2.176 3.965-2.176 4.238 0 5.02 2.792 5.02 6.42v7.395h-4.183v-6.56c0-1.564-.03-3.574-2.178-3.574-2.18 0-2.514 1.7-2.514 3.46v6.668h-4.187V12.61z" fill="#fff"></path></svg></span></a><a aria-label="Reddit" class="heateor_sss_button_reddit" href="https://reddit.com/submit?url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fwhats-a-private-key&amp;title=What%20Is%20a%20Private%20Key%3F" title="Reddit" rel="nofollow noopener" target="_blank" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle"><span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_reddit" style="background-color:#ff5700;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-3.5 -3.5 39 39"><path d="M28.543 15.774a2.953 2.953 0 0 0-2.951-2.949 2.882 2.882 0 0 0-1.9.713 14.075 14.075 0 0 0-6.85-2.044l1.38-4.349 3.768.884a2.452 2.452 0 1 0 .24-1.176l-4.274-1a.6.6 0 0 0-.709.4l-1.659 5.224a14.314 14.314 0 0 0-7.316 2.029 2.908 2.908 0 0 0-1.872-.681 2.942 2.942 0 0 0-1.618 5.4 5.109 5.109 0 0 0-.062.765c0 4.158 5.037 7.541 11.229 7.541s11.22-3.383 11.22-7.541a5.2 5.2 0 0 0-.053-.706 2.963 2.963 0 0 0 1.427-2.51zm-18.008 1.88a1.753 1.753 0 0 1 1.73-1.74 1.73 1.73 0 0 1 1.709 1.74 1.709 1.709 0 0 1-1.709 1.711 1.733 1.733 0 0 1-1.73-1.711zm9.565 4.968a5.573 5.573 0 0 1-4.081 1.272h-.032a5.576 5.576 0 0 1-4.087-1.272.6.6 0 0 1 .844-.854 4.5 4.5 0 0 0 3.238.927h.032a4.5 4.5 0 0 0 3.237-.927.6.6 0 1 1 .844.854zm-.331-3.256a1.726 1.726 0 1 1 1.709-1.712 1.717 1.717 0 0 1-1.712 1.712z" fill="#fff"/></svg></span></a><a aria-label="X" class="heateor_sss_button_x" href="https://twitter.com/intent/tweet?via=ledger&amp;text=What%20Is%20a%20Private%20Key%3F&amp;url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fwhats-a-private-key" title="X" rel="nofollow noopener" target="_blank" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle"><span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_x" style="background-color:#2a2a2a;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg width="100%" height="100%" style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#fff" d="M21.751 7h3.067l-6.7 7.658L26 25.078h-6.172l-4.833-6.32-5.531 6.32h-3.07l7.167-8.19L6 7h6.328l4.37 5.777L21.75 7Zm-1.076 16.242h1.7L11.404 8.74H9.58l11.094 14.503Z"></path></svg></span></a></div><div class="heateorSssClear"></div></div>         </div>
+
+                                            
+        
+                
+                
+        
+<figure class="wp-block-image size-large" id="block-2225c877-9a8e-4562-a68a-1142035190bf"><img loading="lazy" decoding="async" width="1024" height="432" src="../wp-content/uploads/2022/11/11_Classroom_Cover_Orange-1024x432.html" alt="A public and private key will be generated every time you create a new blockchain address." class="wp-image-267393" srcset="https://ledger-wp-website-s3-prd.ledger.com/uploads/2022/11/11_Classroom_Cover_Orange-1024x432.jpg 1024w, https://ledger-wp-website-s3-prd.ledger.com/uploads/2022/11/11_Classroom_Cover_Orange-300x127.jpg 300w, https://ledger-wp-website-s3-prd.ledger.com/uploads/2022/11/11_Classroom_Cover_Orange-768x324.jpg 768w, https://ledger-wp-website-s3-prd.ledger.com/uploads/2022/11/11_Classroom_Cover_Orange-1536x648.jpg 1536w, https://ledger-wp-website-s3-prd.ledger.com/uploads/2022/11/11_Classroom_Cover_Orange-490x207.jpg 490w, https://ledger-wp-website-s3-prd.ledger.com/uploads/2022/11/11_Classroom_Cover_Orange.jpg 1600w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>KEY TAKEAWAYS:</td></tr><tr><td>— Every blockchain address has both a public key and a private key.<br><br>— A public and private key will be generated every time you create a new blockchain address.<br><br>— The public key allows other users to find and transact with you; the private key gives you access to the address and agency over its contents.<br><br>— You must safeguard your private key to truly own your cryptocurrency. Keeping your private keys safe is essential. </td></tr></tbody></table></figure>
+
+
+
+<p class="wp-block-paragraph"><em>Welcome to the second chapter of your crypto crash course. In part one, you discovered the basics of blockchain technology, cryptocurrencies, and Web3; but this module is all about wallets.</em> <em>If you’re thinking “how do I get started?”, you’re in the right place. In this article, you will learn the basics of crypto wallets and how they work; starting with private keys.</em></p>
+
+
+
+<p class="wp-block-paragraph">Every blockchain address has both a public key and a private key and managing them is imperative to store your crypto correctly.&nbsp; The power of your crypto wallet belongs in the hands of whoever owns your private key. And your public key allows other users to find and transact with you. Therefore, understanding each of them and their differences is imperative if you want to know how <a href="../what-is-a-crypto-wallet.html" target="_blank" rel="noreferrer noopener">crypto wallets</a> work.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">But firstly, what is a private key exactly?</p>
+
+
+
+<h2 class="wp-block-heading">Private Keys Explained: What Are They All About?</h2>
+
+
+
+<p class="wp-block-paragraph">Every blockchain address is generated along with two related pieces of information – the private key, and the public key. These keys allow you to control the cryptocurrency corresponding to that particular blockchain address and receive crypto from other people. To understand a private key, it’s also important to understand its relationship with its public counterpart.</p>
+
+
+
+<h3 class="wp-block-heading">What Is a Public Key?</h3>
+
+
+
+<p class="wp-block-paragraph">A public key is a public receiving address that enables you to receive crypto. Any user on the blockchain can send funds to your address using your public key.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">The public key is similar to your bank account number such as IBAN or SWIFT. Anyone can send you money using your bank account number but they cannot control the funds with it. In the same way, a public key does not give others access to the crypto at your blockchain address, it is purely an address that receives assets.</p>
+
+
+
+<h3 class="wp-block-heading">What Is a Private Key?</h3>
+
+
+
+<p class="wp-block-paragraph">A private key grants users access to manage the crypto funds at a specific address. While the public key is like your bank account number, the private key is more like a PIN number or password. It gives you access to your blockchain address and your funds. In fact, whoever has access to it can control and spend the cryptocurrencies at your address. Therefore, keeping it away from prying eyes is imperative.</p>
+
+
+
+<h2 class="wp-block-heading">How Does a Private Key Work?</h2>
+
+
+
+<p class="wp-block-paragraph">The tech behind private and public keys is quite complex, but it’s part of a wider field of cryptography called <a href="https://en.wikipedia.org/wiki/Public-key_cryptography" target="_blank" rel="noreferrer noopener">Public Key Cryptography</a> (PKC). To learn more about the details, check out the full article on <a href="blockchain/what-are-public-keys-and-private-keys.html" target="_blank" rel="noreferrer noopener">Private vs. public Keys</a>. But essentially this technology uses a mathematical concept called a Trapdoor function. This means it’s easy to compute in one direction but nearly impossible to reverse, and it provides the whole foundations upon which blockchains are built.</p>
+
+
+
+<h2 class="wp-block-heading">What Do Private Keys Look Like?</h2>
+
+
+
+<p class="wp-block-paragraph">A blockchain private key is a randomly generated number with hundreds of digits. For simplicity, they are represented as a string of alphanumeric characters. The private and public keys of <a href="../coin/wallet/bitcoin.html">Bitcoin wallets</a> and Ethereum are generated using an algorithm called the&nbsp;Elliptic Curve Digital Signature Algorithm.</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;Let us look at how private keys look on different blockchains:</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Ethereum:</strong>&nbsp; uses a private key made up of 64 hexadecimal characters.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>E.g.</strong> afdfd9c3d2095ef696594f6cedcae59e72dcd697e2a7521b1578140422a4f890.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Bitcoin:</strong> uses a 256-bit number that can be represented in several ways.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>E.g.</strong> E9873D79C6D87DC0FB6A5778633389F4453213303DA61F20BD67FC233AA33262</p>
+
+
+
+<p class="wp-block-paragraph">Either way, if you are looking at your private key, remember not to keep a record of it anywhere online. Your private key is the key to your assets, and no one should be looking at it.</p>
+
+
+
+<h2 class="wp-block-heading">Threats To Your Private Keys</h2>
+
+
+
+<p class="wp-block-paragraph">Your crypto depends on the safety of your private key. So, how you manage that key is of critical importance to your assets. There are a couple of factors to consider in this respect. </p>
+
+
+
+<p class="wp-block-paragraph">Firstly though, are you actually in control of your private keys in the first place?&nbsp;</p>
+
+
+
+<h3 class="wp-block-heading">Custody</h3>
+
+
+
+<p class="wp-block-paragraph">When you buy cryptocurrency on a centralized exchange, it keeps custody of the private keys, and therefore, control of your assets. You have no choice but to trust the platform with your funds. Using this method, the exchange itself manages the private keys and simply lets you use one of its wallets.</p>
+
+
+
+<p class="wp-block-paragraph">While most crypto exchanges follow strict guidelines, they don&#8217;t offer users full ownership over their assets. There’s a saying in the cryptocurrency world, “<a href="not-your-keys-not-your-coins-why-it-matters.html" target="_blank" rel="noreferrer noopener">Not your keys, Not your coins</a>”. It means that if you do not hold your private keys, the coins are technically not yours.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">The better option is using a crypto wallet that allows for <a href="ledger-nano-the-safest-way-to-manage-crypto.html" target="_blank" rel="noreferrer noopener">self-custody</a>. To explain, non-custodial wallets allow you to control your private keys, thus giving you true ownership of your crypto.</p>
+
+
+
+<p class="wp-block-paragraph">So you already know that self-custody allows you to store your crypto away from a centralized entity&#8217;s control. But what other threats do crypto wallets face?</p>
+
+
+
+<h3 class="wp-block-heading">Hacks</h3>
+
+
+
+<p class="wp-block-paragraph">The next biggest threat to your security is hacking via the internet.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">To explain, some crypto wallets operate via software on the same device you surf the net with, such as your smartphone or laptop. This is very convenient, but since they store your private keys within their interface, it means a hacker with access to your laptop could potentially find and read your private keys. At this point, there&#8217;s nothing you can do to stop them. The private keys of your account grant the owner permission to control any assets at that address.</p>
+
+
+
+<h2 class="wp-block-heading">How To Keep Your Private Keys Secure</h2>
+
+
+
+<p class="wp-block-paragraph">To avoid these types of threats, a great option is to use a Ledger signer. To explain, a hardware wallet is a physical device that allows you to manage your cryptocurrencies while keeping your private keys offline. Hardware wallets avoid online hacks as they remain disconnected from the internet.</p>
+
+
+
+<p class="wp-block-paragraph"><a href="https://shop.ledger.com/pages/hardware-wallet">Ledger signers</a> are particularly strong as they use a <a href="security/not-all-chips-are-born-equal.html">Secure Element chip</a>, one of the most secure computer chips in existence. This keeps your crypto safe from, not just online threats, but physical hacks too. Ledger signers use advanced technology and follow best security practices to keep your funds safe. </p>
+
+
+
+<p class="wp-block-paragraph">Five great signer options include the <a href="https://shop.ledger.com/products/ledger-nano-x">Ledger Nano X</a>, <a href="https://shop.ledger.com/products/ledger-nano-s-plus">Ledger Nano S Plus</a>, <a href="https://shop.ledger.com/products/ledger-nano-gen5?srsltid=AfmBOor4ZJq1W3meEr1Ne7UpIZdkd3tG5dNQtY31aSCHZ1FiMTaRo4wL">Ledger Nano </a><span style="box-sizing: border-box; margin: 0px; padding: 0px;"><a href="https://shop.ledger.com/products/ledger-nano-gen5?srsltid=AfmBOor4ZJq1W3meEr1Ne7UpIZdkd3tG5dNQtY31aSCHZ1FiMTaRo4wL" target="_blank">Gen5</a></span><a href="https://shop.ledger.com/products/ledger-flex">,&nbsp;Ledger Flex</a>, and <a href="https://shop.ledger.com/products/ledger-stax">Ledger Stax</a>. Buying a Ledger signer is the first step in keeping your private keys safe, something that’s imperative for every crypto user.</p>
+
+
+
+<figure class="wp-block-image size-full"><a href="https://shop.ledger.com/pages/ledger-wallet" target="_blank" rel=" noreferrer noopener"><img loading="lazy" decoding="async" width="1024" height="252" src="../../ledger-wp-website-s3-prd.ledger.com/uploads/2026/04/ledger_banner_yourphoneisntsecure-1.png" alt="" class="wp-image-325779" srcset="https://ledger-wp-website-s3-prd.ledger.com/uploads/2026/04/ledger_banner_yourphoneisntsecure-1.png 1024w, https://ledger-wp-website-s3-prd.ledger.com/uploads/2026/04/ledger_banner_yourphoneisntsecure-1-300x74.png 300w, https://ledger-wp-website-s3-prd.ledger.com/uploads/2026/04/ledger_banner_yourphoneisntsecure-1-768x189.png 768w, https://ledger-wp-website-s3-prd.ledger.com/uploads/2026/04/ledger_banner_yourphoneisntsecure-1-490x121.png 490w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></a></figure>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+
+
+
+<h2 class="wp-block-heading"><strong>The Shift: From Hardware Wallet to signer&nbsp;</strong></h2>
+
+
+
+<p class="wp-block-paragraph">Crypto may have begun as a bold experiment, but adoption has grown as the technology and user experience have rapidly evolved; the language used to describe it, has however, stayed stuck in its infancy.</p>
+
+
+
+<p class="wp-block-paragraph">We called our devices “hardware wallets,&#8221; mislabelling the role of secure hardware, and obfuscating the role of software (Ledger Live). Along the way, users were left behind.</p>
+
+
+
+<p class="wp-block-paragraph">People believed:</p>
+
+
+
+<ul class="wp-block-list">
+<li>That value was stored on the device (it isn’t).</li>
+
+
+
+<li>That if you lose the device, you lose your assets (you don’t).</li>
+
+
+
+<li>That the device itself was the endgame (it’s not).</li>
+
+
+
+<li>That those 24 words were a burden only tech-savvy users could manage (not true anymore).</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">These are more than misconceptions. They are adoption blockers. So at Ledger, we believe that clarity is essential for the <strong>next stage of adoption</strong><br><br>We’re changing how we speak about our products. And by doing so, we’re changing how people understand digital ownership itself.<br><strong><br></strong><strong>Hardware wallets&nbsp; → signers</strong></p>
+
+
+
+<p class="wp-block-paragraph">Ledger devices don’t store value. They sign transactions. They prove intent. They verify identity. They’re not vaults, they’re the secure bridge between who you are and what you do online. They don’t just hold keys. They empower you to trust yourself.<br><br>We call them <strong>signers</strong> now, because that’s what they truly are.</p>
+
+
+
+<p class="wp-block-paragraph">In a world where AI grows more powerful every day, <strong>proof of humanity matters more than ever.</strong> A signer is more than a security device, it’s your cryptographic proof of you. It gives you a secure foundation to own, authorize, and protect your digital life without relying on anyone else. From sending a transaction to signing a contract or verifying your credentials, your signer&nbsp; ensures you, and only, can provide digital consent &#8211; proof of you.Together, signer and <a href="topics/ledgersolutions/introducing-ledger-wallet.html">Ledger Wallet</a> redefine what digital ownership looks like, clear, secure, and free from compromise.</p>
+
+      </article>
+
+
+      
+      
+            <div class="plain-text margin-lg">
+        <div class="margin-s align-center share-box">
+          <b>SHARE</b>
+           <div class="heateor_sss_sharing_container heateor_sss_horizontal_sharing" data-heateor-ss-offset="0" data-heateor-sss-href='whats-a-private-key.html'><div class="heateor_sss_sharing_ul"><a aria-label="Instagram" class="heateor_sss_button_instagram" href="https://www.instagram.com/ledger" title="Instagram" rel="nofollow noopener" target="_blank" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle"><span class="heateor_sss_svg" style="background-color:#53beee;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;border-radius:999px;" version="1.1" viewBox="-10 -10 148 148" width="100%" height="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><g><path d="M86,112H42c-14.336,0-26-11.663-26-26V42c0-14.337,11.664-26,26-26h44c14.337,0,26,11.663,26,26v44 C112,100.337,100.337,112,86,112z M42,24c-9.925,0-18,8.074-18,18v44c0,9.925,8.075,18,18,18h44c9.926,0,18-8.075,18-18V42 c0-9.926-8.074-18-18-18H42z" fill="#fff"></path></g><g><path d="M64,88c-13.234,0-24-10.767-24-24c0-13.234,10.766-24,24-24s24,10.766,24,24C88,77.233,77.234,88,64,88z M64,48c-8.822,0-16,7.178-16,16s7.178,16,16,16c8.822,0,16-7.178,16-16S72.822,48,64,48z" fill="#fff"></path></g><g><circle cx="89.5" cy="38.5" fill="#fff" r="5.5"></circle></g></g></svg></span></a><a aria-label="Facebook" class="heateor_sss_facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fwhats-a-private-key" title="Facebook" rel="nofollow noopener" target="_blank" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle"><span class="heateor_sss_svg" style="background-color:#0765FE;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32"><path fill="#fff" d="M28 16c0-6.627-5.373-12-12-12S4 9.373 4 16c0 5.628 3.875 10.35 9.101 11.647v-7.98h-2.474V16H13.1v-1.58c0-4.085 1.849-5.978 5.859-5.978.76 0 2.072.15 2.608.298v3.325c-.283-.03-.775-.045-1.386-.045-1.967 0-2.728.745-2.728 2.683V16h3.92l-.673 3.667h-3.247v8.245C23.395 27.195 28 22.135 28 16Z"></path></svg></span></a><a aria-label="Linkedin" class="heateor_sss_button_linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fwhats-a-private-key" title="Linkedin" rel="nofollow noopener" target="_blank" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle"><span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_linkedin" style="background-color:#0077b5;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32"><path d="M6.227 12.61h4.19v13.48h-4.19V12.61zm2.095-6.7a2.43 2.43 0 0 1 0 4.86c-1.344 0-2.428-1.09-2.428-2.43s1.084-2.43 2.428-2.43m4.72 6.7h4.02v1.84h.058c.56-1.058 1.927-2.176 3.965-2.176 4.238 0 5.02 2.792 5.02 6.42v7.395h-4.183v-6.56c0-1.564-.03-3.574-2.178-3.574-2.18 0-2.514 1.7-2.514 3.46v6.668h-4.187V12.61z" fill="#fff"></path></svg></span></a><a aria-label="Reddit" class="heateor_sss_button_reddit" href="https://reddit.com/submit?url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fwhats-a-private-key&amp;title=What%20Is%20a%20Private%20Key%3F" title="Reddit" rel="nofollow noopener" target="_blank" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle"><span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_reddit" style="background-color:#ff5700;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-3.5 -3.5 39 39"><path d="M28.543 15.774a2.953 2.953 0 0 0-2.951-2.949 2.882 2.882 0 0 0-1.9.713 14.075 14.075 0 0 0-6.85-2.044l1.38-4.349 3.768.884a2.452 2.452 0 1 0 .24-1.176l-4.274-1a.6.6 0 0 0-.709.4l-1.659 5.224a14.314 14.314 0 0 0-7.316 2.029 2.908 2.908 0 0 0-1.872-.681 2.942 2.942 0 0 0-1.618 5.4 5.109 5.109 0 0 0-.062.765c0 4.158 5.037 7.541 11.229 7.541s11.22-3.383 11.22-7.541a5.2 5.2 0 0 0-.053-.706 2.963 2.963 0 0 0 1.427-2.51zm-18.008 1.88a1.753 1.753 0 0 1 1.73-1.74 1.73 1.73 0 0 1 1.709 1.74 1.709 1.709 0 0 1-1.709 1.711 1.733 1.733 0 0 1-1.73-1.711zm9.565 4.968a5.573 5.573 0 0 1-4.081 1.272h-.032a5.576 5.576 0 0 1-4.087-1.272.6.6 0 0 1 .844-.854 4.5 4.5 0 0 0 3.238.927h.032a4.5 4.5 0 0 0 3.237-.927.6.6 0 1 1 .844.854zm-.331-3.256a1.726 1.726 0 1 1 1.709-1.712 1.717 1.717 0 0 1-1.712 1.712z" fill="#fff"/></svg></span></a><a aria-label="X" class="heateor_sss_button_x" href="https://twitter.com/intent/tweet?via=ledger&amp;text=What%20Is%20a%20Private%20Key%3F&amp;url=https%3A%2F%2Fwww.ledger.com%2Facademy%2Fwhats-a-private-key" title="X" rel="nofollow noopener" target="_blank" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle"><span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_x" style="background-color:#2a2a2a;width:21px;height:21px;border-radius:999px;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg width="100%" height="100%" style="display:block;border-radius:999px;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#fff" d="M21.751 7h3.067l-6.7 7.658L26 25.078h-6.172l-4.833-6.32-5.531 6.32h-3.07l7.167-8.19L6 7h6.328l4.37 5.777L21.75 7Zm-1.076 16.242h1.7L11.404 8.74H9.58l11.094 14.503Z"></path></svg></span></a></div><div class="heateorSssClear"></div></div>         </div>
+                          <a href="basic-basics/2-how-to-own-crypto/what-is-a-crypto-wallet.html" title="What Is A Crypto Wallet?" class="font-size-l read-more">
+            Next up: What Is A Crypto Wallet?
+          </a>
+              </div>
+      <br>
+
+
+                    <div class="margin-md">
+          <p class="title align-center margin-s uppercase h4">
+            Related Resources
+            <div class="swiper swiper-related-articles" id="swiper-related-articles">
+              <div class="swiper-wrapper">
+                                  <div class="swiper-slide">
+                                                                                        
+<div class="article-card">
+  <!-- all-clickable -->
+  <a href="topics/crypto/solana-wallet-alerts.html" class="illustration" style="background-image: url(https://ledger-wp-website-s3-prd.ledger.com/uploads/2023/04/06_Crypto_Thumb_No-title.webp);" data-trigger-academy-article data-trigger-academy-article-category="Read" data-trigger-academy-article-id="299134" data-trigger-academy-article-topic="Crypto" data-trigger-academy-article-name="Best Solana Wallet Alerts: Track Wallet Activity"></a>
+  <div class="content">
+    <a href="topics/crypto/solana-wallet-alerts.html" class="h7 title margin-xs" data-trigger-academy-article data-trigger-academy-article-category="Read" data-trigger-academy-article-id="299134" data-trigger-academy-article-topic="Crypto" data-trigger-academy-article-name="Best Solana Wallet Alerts: Track Wallet Activity">Best Solana Wallet Alerts: Track Wallet Activity</a>
+
+                <div class="caption-for-article">
+            <div class="time-to-read">
+                <span class="badge badge-nude">
+          <i class="icon-copy"></i> Read
+        </span>
+      </div>
+      
+              <span>8 min</span>
+      
+              <span class="with-point level level-1">Beginner</span>
+          </div>
+      </div>
+</div>                  </div>
+                                  <div class="swiper-slide">
+                                                                                        
+<div class="article-card">
+  <!-- all-clickable -->
+  <a href="topics/crypto/best-solana-wallets.html" class="illustration" style="background-image: url(https://ledger-wp-website-s3-prd.ledger.com/uploads/2023/04/06_Crypto_Thumb_No-title.webp);" data-trigger-academy-article data-trigger-academy-article-category="Read" data-trigger-academy-article-id="299159" data-trigger-academy-article-topic="Crypto" data-trigger-academy-article-name="The Best Solana Wallets for 2026"></a>
+  <div class="content">
+    <a href="topics/crypto/best-solana-wallets.html" class="h7 title margin-xs" data-trigger-academy-article data-trigger-academy-article-category="Read" data-trigger-academy-article-id="299159" data-trigger-academy-article-topic="Crypto" data-trigger-academy-article-name="The Best Solana Wallets for 2026">The Best Solana Wallets for 2026</a>
+
+                <div class="caption-for-article">
+            <div class="time-to-read">
+                <span class="badge badge-nude">
+          <i class="icon-copy"></i> Read
+        </span>
+      </div>
+      
+              <span>8 min</span>
+      
+              <span class="with-point level level-1">Beginner</span>
+          </div>
+      </div>
+</div>                  </div>
+                                  <div class="swiper-slide">
+                                                                                                    
+<div class="article-card">
+  <!-- all-clickable -->
+  <a href="topics/ledgersolutions/ledger-flex-stax-the-next-gen-wallets-your-crypto-deserves.html" class="illustration" style="background-image: url(https://ledger-wp-website-s3-prd.ledger.com/uploads/2023/01/10_Ledger-Ecosystem_Thumb_No-title-1.webp);" data-trigger-academy-article data-trigger-academy-article-category="Read" data-trigger-academy-article-id="298066" data-trigger-academy-article-topic="Ledger solutions" data-trigger-academy-article-name="Why You Should Upgrade to Ledger Stax or Ledger Flex &amp; How to Get Started"></a>
+  <div class="content">
+    <a href="topics/ledgersolutions/ledger-flex-stax-the-next-gen-wallets-your-crypto-deserves.html" class="h7 title margin-xs" data-trigger-academy-article data-trigger-academy-article-category="Read" data-trigger-academy-article-id="298066" data-trigger-academy-article-topic="Ledger solutions" data-trigger-academy-article-name="Why You Should Upgrade to Ledger Stax or Ledger Flex &amp; How to Get Started">Why You Should Upgrade to Ledger Stax or Ledger Flex &amp; How to Get Started</a>
+
+                <div class="caption-for-article">
+            <div class="time-to-read">
+                <span class="badge badge-nude">
+          <i class="icon-copy"></i> Read
+        </span>
+      </div>
+      
+      
+              <span class="with-point level level-1">Beginner</span>
+          </div>
+      </div>
+</div>                  </div>
+                                  <div class="swiper-slide">
+                                                                                                    
+<div class="article-card">
+  <!-- all-clickable -->
+  <a href="topics/ledgersolutions/10-years-of-ledger-secure-self-custody-for-all.html" class="illustration" style="background-image: url(https://ledger-wp-website-s3-prd.ledger.com/uploads/2023/01/10_Ledger-Ecosystem_Thumb_No-title-1.webp);" data-trigger-academy-article data-trigger-academy-article-category="Read" data-trigger-academy-article-id="297545" data-trigger-academy-article-topic="Ledger solutions" data-trigger-academy-article-name="10 Years of Ledger: Secure Self-Custody for All"></a>
+  <div class="content">
+    <a href="topics/ledgersolutions/10-years-of-ledger-secure-self-custody-for-all.html" class="h7 title margin-xs" data-trigger-academy-article data-trigger-academy-article-category="Read" data-trigger-academy-article-id="297545" data-trigger-academy-article-topic="Ledger solutions" data-trigger-academy-article-name="10 Years of Ledger: Secure Self-Custody for All">10 Years of Ledger: Secure Self-Custody for All</a>
+
+                <div class="caption-for-article">
+            <div class="time-to-read">
+                <span class="badge badge-nude">
+          <i class="icon-copy"></i> Read
+        </span>
+      </div>
+      
+      
+              <span class="with-point level level-1">Beginner</span>
+          </div>
+      </div>
+</div>                  </div>
+                                  <div class="swiper-slide">
+                                                                                              
+<div class="article-card">
+  <!-- all-clickable -->
+  <a href="topics/security/how-to-get-a-crypto-wallet.html" class="illustration" style="background-image: url(https://ledger-wp-website-s3-prd.ledger.com/uploads/2023/02/09_Security_Thumb_No-title.webp);" data-trigger-academy-article data-trigger-academy-article-category="Read" data-trigger-academy-article-id="296882" data-trigger-academy-article-topic="Security" data-trigger-academy-article-name="How To Get a Crypto Wallet"></a>
+  <div class="content">
+    <a href="topics/security/how-to-get-a-crypto-wallet.html" class="h7 title margin-xs" data-trigger-academy-article data-trigger-academy-article-category="Read" data-trigger-academy-article-id="296882" data-trigger-academy-article-topic="Security" data-trigger-academy-article-name="How To Get a Crypto Wallet">How To Get a Crypto Wallet</a>
+
+                <div class="caption-for-article">
+            <div class="time-to-read">
+                <span class="badge badge-nude">
+          <i class="icon-copy"></i> Read
+        </span>
+      </div>
+      
+              <span>8 min</span>
+      
+              <span class="with-point level level-1">Beginner</span>
+          </div>
+      </div>
+</div>                  </div>
+                                  <div class="swiper-slide">
+                                                                                              
+<div class="article-card">
+  <!-- all-clickable -->
+  <a href="topics/ledgersolutions/the-secure-touchscreen-secure-screens-for-ledgers-next-generation-devices.html" class="illustration" style="background-image: url(https://ledger-wp-website-s3-prd.ledger.com/uploads/2023/01/10_Ledger-Ecosystem_Thumb_No-title-1.webp);" data-trigger-academy-article data-trigger-academy-article-category="Read" data-trigger-academy-article-id="295725" data-trigger-academy-article-topic="Ledger solutions" data-trigger-academy-article-name="The Secure Touchscreen: Secure Screens for Ledger&#8217;s Next-Generation Devices"></a>
+  <div class="content">
+    <a href="topics/ledgersolutions/the-secure-touchscreen-secure-screens-for-ledgers-next-generation-devices.html" class="h7 title margin-xs" data-trigger-academy-article data-trigger-academy-article-category="Read" data-trigger-academy-article-id="295725" data-trigger-academy-article-topic="Ledger solutions" data-trigger-academy-article-name="The Secure Touchscreen: Secure Screens for Ledger&#8217;s Next-Generation Devices">The Secure Touchscreen: Secure Screens for Ledger&#8217;s Next-Generation Devices</a>
+
+                <div class="caption-for-article">
+            <div class="time-to-read">
+                <span class="badge badge-nude">
+          <i class="icon-copy"></i> Read
+        </span>
+      </div>
+      
+      
+              <span class="with-point level level-1">Beginner</span>
+          </div>
+      </div>
+</div>                  </div>
+                                  <div class="swiper-slide">
+                                                                                              
+<div class="article-card">
+  <!-- all-clickable -->
+  <a href="topics/ledgersolutions/ledgers-next-generation-devices-ledger-stax-vs-ledger-flex.html" class="illustration" style="background-image: url(https://ledger-wp-website-s3-prd.ledger.com/uploads/2023/01/10_Ledger-Ecosystem_Thumb_No-title-1.webp);" data-trigger-academy-article data-trigger-academy-article-category="Read" data-trigger-academy-article-id="295724" data-trigger-academy-article-topic="Ledger solutions" data-trigger-academy-article-name="Ledger’s Next-Generation Devices: Ledger Stax vs Ledger Flex"></a>
+  <div class="content">
+    <a href="topics/ledgersolutions/ledgers-next-generation-devices-ledger-stax-vs-ledger-flex.html" class="h7 title margin-xs" data-trigger-academy-article data-trigger-academy-article-category="Read" data-trigger-academy-article-id="295724" data-trigger-academy-article-topic="Ledger solutions" data-trigger-academy-article-name="Ledger’s Next-Generation Devices: Ledger Stax vs Ledger Flex">Ledger’s Next-Generation Devices: Ledger Stax vs Ledger Flex</a>
+
+                <div class="caption-for-article">
+            <div class="time-to-read">
+                <span class="badge badge-nude">
+          <i class="icon-copy"></i> Read
+        </span>
+      </div>
+      
+      
+              <span class="with-point level level-1">Beginner</span>
+          </div>
+      </div>
+</div>                  </div>
+                                  <div class="swiper-slide">
+                                                                                        
+<div class="article-card">
+  <!-- all-clickable -->
+  <a href="topics/crypto/ethereum-wallet-tracker.html" class="illustration" style="background-image: url(https://ledger-wp-website-s3-prd.ledger.com/uploads/2023/04/06_Crypto_Thumb_No-title.webp);" data-trigger-academy-article data-trigger-academy-article-category="Read" data-trigger-academy-article-id="294197" data-trigger-academy-article-topic="Crypto" data-trigger-academy-article-name="How to Track Ethereum Wallets and Crypto Addresses"></a>
+  <div class="content">
+    <a href="topics/crypto/ethereum-wallet-tracker.html" class="h7 title margin-xs" data-trigger-academy-article data-trigger-academy-article-category="Read" data-trigger-academy-article-id="294197" data-trigger-academy-article-topic="Crypto" data-trigger-academy-article-name="How to Track Ethereum Wallets and Crypto Addresses">How to Track Ethereum Wallets and Crypto Addresses</a>
+
+                <div class="caption-for-article">
+            <div class="time-to-read">
+                <span class="badge badge-nude">
+          <i class="icon-copy"></i> Read
+        </span>
+      </div>
+      
+              <span>8 min</span>
+      
+              <span class="with-point level level-1">Beginner</span>
+          </div>
+      </div>
+</div>                  </div>
+                                  <div class="swiper-slide">
+                                                                                        
+<div class="article-card">
+  <!-- all-clickable -->
+  <a href="topics/blockchain/what-is-a-crypto-wallet-address.html" class="illustration" style="background-image: url(https://ledger-wp-website-s3-prd.ledger.com/uploads/2023/05/02_Blockchain_Thumb_No-title.webp);" data-trigger-academy-article data-trigger-academy-article-category="Read" data-trigger-academy-article-id="294163" data-trigger-academy-article-topic="Blockchain" data-trigger-academy-article-name="What Is A Crypto Wallet Address?"></a>
+  <div class="content">
+    <a href="topics/blockchain/what-is-a-crypto-wallet-address.html" class="h7 title margin-xs" data-trigger-academy-article data-trigger-academy-article-category="Read" data-trigger-academy-article-id="294163" data-trigger-academy-article-topic="Blockchain" data-trigger-academy-article-name="What Is A Crypto Wallet Address?">What Is A Crypto Wallet Address?</a>
+
+                <div class="caption-for-article">
+            <div class="time-to-read">
+                <span class="badge badge-nude">
+          <i class="icon-copy"></i> Read
+        </span>
+      </div>
+      
+      
+              <span class="with-point level level-1">Beginner</span>
+          </div>
+      </div>
+</div>                  </div>
+                              </div>
+
+              <div class="swiper-button-next"><i class="icon-chevron-right"></i></div>
+              <div class="swiper-button-prev"><i class="icon-chevron-left"></i></div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </p>
+        </div>
+      
+    </div>
+
+  </div>
+
+  <section class="bg-divider-dark">
+  <div class="row">
+    <div></div>
+  </div>
+</section>
+<div id="newsletter" class="bg prefooter-blocks">
+  <div class="row">
+    <div class="row flexbox">
+      <div>
+        <div class="textwidget custom-html-widget">
+            <h3 class="heading-4 margin-xxs">Stay in touch</h3>
+            <p class="text-body-r">Announcements can be found in our blog. Press contact:<br class="is-hidden-mobile"> <a href="../cdn-cgi/l/email-protection.html#18757d7c717958747d7c7f7d6a367b7775" title=""><span class="__cf_email__" data-cfemail="d2bfb7b6bbb392beb7b6b5b7a0fcb1bdbf">[email&#160;protected]</span></a></p>
+        </div>
+        <div class="textwidget custom-html-widget">
+          <ul class="no-bullet social-icons">
+            <li>
+              <a href="https://www.reddit.com/r/ledgerwallet/" title="Ledger Reddit" target="_blank" rel="noopener">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M6.16625 8.00002C5.70777 8.00002 5.3335 8.37429 5.3335 8.83277C5.3335 9.29125 5.70777 9.66552 6.16625 9.66552C6.62473 9.66552 6.999 9.29125 6.999 8.83277C6.999 8.37429 6.62473 8.00002 6.16625 8.00002Z" />
+    <path d="M8.00952 11.6398C8.32765 11.6398 9.41303 11.6024 9.98379 11.0316C10.068 10.9474 10.068 10.8164 10.0025 10.7228C9.9183 10.6386 9.77795 10.6386 9.69373 10.7228C9.32882 11.0784 8.57093 11.2094 8.01888 11.2094C7.46683 11.2094 6.69958 11.0784 6.34403 10.7228C6.25982 10.6386 6.11946 10.6386 6.03525 10.7228C5.95104 10.807 5.95104 10.9474 6.03525 11.0316C6.59666 11.593 7.69139 11.6398 8.00952 11.6398Z" />
+    <path d="M9.00134 8.83277C9.00134 9.29125 9.37561 9.66552 9.83409 9.66552C10.2926 9.66552 10.6668 9.29125 10.6668 8.83277C10.6668 8.37429 10.2926 8.00002 9.83409 8.00002C9.37561 8.00002 9.00134 8.37429 9.00134 8.83277Z" />
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8ZM12.1639 6.83043C12.8095 6.83043 13.3335 7.35441 13.3335 8.00002C13.3335 8.47722 13.0434 8.88891 12.6598 9.07605C12.6785 9.18833 12.6879 9.30061 12.6879 9.42225C12.6879 11.2187 10.6013 12.669 8.01888 12.669C5.43642 12.669 3.34987 11.2187 3.34987 9.42225C3.34987 9.30061 3.35923 9.17897 3.37794 9.06669C2.96625 8.87956 2.68555 8.47722 2.68555 8.00002C2.68555 7.35441 3.20952 6.83043 3.85514 6.83043C4.16391 6.83043 4.45397 6.96143 4.65982 7.15792C5.46449 6.56845 6.57795 6.20353 7.82239 6.16611L8.41186 3.3778C8.43058 3.32166 8.45865 3.27488 8.50543 3.24681C8.55221 3.21874 8.60835 3.20938 8.66449 3.21874L10.6013 3.63043C10.7323 3.34973 11.013 3.1626 11.3405 3.1626C11.799 3.1626 12.1733 3.53687 12.1733 3.99535C12.1733 4.45383 11.799 4.82809 11.3405 4.82809C10.8914 4.82809 10.5265 4.47254 10.5078 4.03277L8.77677 3.66786L8.24344 6.16611C9.45982 6.21289 10.5639 6.58716 11.3592 7.15792C11.5651 6.95207 11.8458 6.83043 12.1639 6.83043Z" />
+</svg>
+
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/Ledger/" title="Ledger Facebook" target="_blank" rel="noopener">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 8.04974C16 3.60622 12.4161 0 8 0C3.58394 0 0 3.60622 0 8.04974C0 12.0705 2.92482 15.4031 6.75592 16V10.371H4.71267V8.04974H6.75592V6.27565C6.75592 4.26114 7.94233 3.14197 9.77137 3.14197C10.6447 3.14197 11.551 3.30777 11.551 3.30777V5.27254H10.5458C9.54891 5.27254 9.23584 5.90259 9.23584 6.53264V8.04145H11.4603L11.1061 10.3627H9.23584V15.9917C13.0752 15.4031 16 12.0705 16 8.04974Z"/>
+</svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/ledger/" title="Ledger Instagram" target="_blank" rel="noopener">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4.68678 0.0559503C3.83557 0.0961104 3.25429 0.231951 2.74612 0.431632C2.2202 0.636592 1.77443 0.911633 1.33091 1.35675C0.887382 1.80188 0.614259 2.24796 0.410737 2.77468C0.213775 3.28396 0.0803338 3.86572 0.0427334 4.71741C0.00513303 5.56909 -0.00318706 5.84285 0.000972982 8.01534C0.00513302 10.1878 0.0147331 10.4601 0.0560135 11.3136C0.096654 12.1646 0.232015 12.7458 0.431697 13.2541C0.636979 13.78 0.911702 14.2256 1.35699 14.6693C1.80227 15.113 2.24804 15.3854 2.77604 15.5893C3.28485 15.7859 3.86677 15.92 4.7183 15.9573C5.56983 15.9946 5.84391 16.0032 8.01577 15.999C10.1876 15.9949 10.4611 15.9853 11.3144 15.9448C12.1677 15.9043 12.7457 15.768 13.2542 15.5693C13.7802 15.3635 14.2261 15.0893 14.6694 14.6438C15.1128 14.1984 15.3858 13.752 15.5891 13.225C15.7863 12.7162 15.9202 12.1342 15.9571 11.2833C15.9944 10.4294 16.0032 10.1568 15.9991 7.98462C15.9949 5.81245 15.9851 5.54013 15.9447 4.68701C15.9042 3.83388 15.7687 3.25452 15.5691 2.74588C15.3635 2.21996 15.0891 1.77468 14.644 1.33067C14.1989 0.886673 13.7522 0.613872 13.2253 0.410992C12.7161 0.214031 12.1345 0.0797904 11.283 0.0429902C10.4315 0.00619011 10.1574 -0.00324992 7.98473 0.000910092C5.81207 0.00507011 5.54007 0.0143501 4.68678 0.0559503ZM4.78022 14.5181C4.00021 14.4842 3.57669 14.3546 3.29445 14.2461C2.92068 14.1021 2.65444 13.928 2.37316 13.6494C2.09187 13.3709 1.91907 13.1037 1.77315 12.7307C1.66355 12.4485 1.53155 12.0254 1.49507 11.2454C1.45539 10.4024 1.44707 10.1493 1.44243 8.01342C1.43779 5.87757 1.44595 5.62477 1.48291 4.78141C1.51619 4.00204 1.64659 3.57804 1.75491 3.29596C1.89891 2.92172 2.07235 2.65596 2.35156 2.37484C2.63076 2.09372 2.89716 1.9206 3.27045 1.77468C3.55237 1.6646 3.97541 1.53372 4.7551 1.4966C5.59879 1.4566 5.85159 1.4486 7.98713 1.44396C10.1227 1.43931 10.3761 1.44731 11.2201 1.48444C11.9995 1.51836 12.4237 1.64748 12.7054 1.75644C13.0793 1.90044 13.3454 2.0734 13.6266 2.35308C13.9077 2.63276 14.081 2.8982 14.2269 3.27228C14.3371 3.5534 14.468 3.97628 14.5048 4.75645C14.545 5.60013 14.5541 5.85309 14.5579 7.98846C14.5618 10.1238 14.5542 10.3774 14.5173 11.2205C14.4832 12.0005 14.3539 12.4242 14.2453 12.7067C14.1013 13.0803 13.9277 13.3467 13.6483 13.6277C13.3689 13.9086 13.1029 14.0818 12.7294 14.2277C12.4478 14.3376 12.0243 14.4688 11.2452 14.5059C10.4016 14.5456 10.1488 14.5539 8.01241 14.5586C5.87607 14.5632 5.62407 14.5546 4.78038 14.5181M11.302 3.72428C11.3024 3.91417 11.359 4.09969 11.4648 4.25739C11.5705 4.4151 11.7207 4.53789 11.8962 4.61025C12.0718 4.68261 12.2649 4.70128 12.451 4.6639C12.6372 4.62652 12.8081 4.53477 12.9421 4.40026C13.0762 4.26575 13.1673 4.09451 13.204 3.9082C13.2407 3.7219 13.2213 3.5289 13.1483 3.35361C13.0753 3.17831 12.9519 3.02861 12.7938 2.92342C12.6358 2.81824 12.45 2.7623 12.2601 2.76268C12.0056 2.76319 11.7617 2.86478 11.582 3.0451C11.4023 3.22543 11.3016 3.46973 11.302 3.72428ZM3.89237 8.00798C3.89685 10.2768 5.73943 12.1118 8.00778 12.1075C10.2761 12.1032 12.1125 10.2608 12.1081 7.99198C12.1038 5.72317 10.2608 3.88764 7.99209 3.89212C5.72343 3.8966 3.88805 5.73949 3.89237 8.00798ZM5.33335 8.0051C5.3323 7.47767 5.48769 6.96178 5.77984 6.52266C6.072 6.08354 6.48781 5.74091 6.9747 5.53811C7.46158 5.33531 7.99767 5.28144 8.51517 5.38331C9.03267 5.48518 9.50834 5.73822 9.88203 6.11043C10.2557 6.48264 10.5106 6.9573 10.6146 7.47439C10.7185 7.99148 10.6667 8.52777 10.4659 9.01545C10.265 9.50313 9.92401 9.92029 9.48604 10.2142C9.04808 10.5081 8.53281 10.6655 8.00537 10.6665C7.65516 10.6673 7.30823 10.599 6.9844 10.4657C6.66057 10.3323 6.36619 10.1365 6.11806 9.88931C5.86993 9.64216 5.67292 9.34856 5.53828 9.02526C5.40363 8.70196 5.334 8.35531 5.33335 8.0051Z" />
+</svg>
+
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/Ledger" title="Ledger Twitter" target="_blank" rel="noopener">
+                <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M9.54463 6.77491L15.501 0H14.0895L8.91762 5.88256L4.78683 0H0.0224609L6.26902 8.89547L0.0224609 16H1.43401L6.89567 9.78782L11.2581 16H16.0225L9.54429 6.77491H9.54463ZM7.61133 8.97384L6.97842 8.08805L1.94261 1.03974H4.11066L8.17462 6.72795L8.80753 7.61374L14.0902 15.0075H11.9221L7.61133 8.97418V8.97384Z" />
+</svg>
+
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/Ledger" title="Ledger Youtube" target="_blank" rel="noopener">
+                <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.2522 0.35842C14.9411 0.555974 15.4824 1.13594 15.6668 1.87394H15.6655C16 3.21025 16 6 16 6C16 6 16 8.78975 15.6655 10.1261C15.4811 10.8641 14.9397 11.444 14.2509 11.6416C13.0036 12 8 12 8 12C8 12 2.99638 12 1.74909 11.6416C1.06026 11.444 0.518933 10.8641 0.334541 10.1261C0 8.78975 0 6 0 6C0 6 0 3.21025 0.334541 1.87394C0.518933 1.13594 1.06026 0.555974 1.74909 0.35842C2.99638 0 8 0 8 0C8 0 13.0036 0 14.2522 0.35842ZM10.5578 5.92865L6.39972 3.35763V8.49968L10.5578 5.92865Z" />
+</svg>
+
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/company/ledgerhq" title="Ledger Linkedin company" target="_blank" rel="noopener">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.2222 16H1.77778C0.795938 16 0 15.2041 0 14.2222V1.77778C0 0.795938 0.795938 0 1.77778 0H14.2222C15.2041 0 16 0.795938 16 1.77778V14.2222C16 15.2041 15.2041 16 14.2222 16ZM11.4035 13.7778H13.7778V8.90031C13.7778 6.83659 12.608 5.83876 10.9739 5.83876C9.33916 5.83876 8.65117 7.11181 8.65117 7.11181V6.07412H6.36301V13.7778H8.65117V9.73385C8.65117 8.65029 9.14996 8.0055 10.1046 8.0055C10.9822 8.0055 11.4035 8.6251 11.4035 9.73385V13.7778ZM2.22227 3.64382C2.22227 4.42886 2.85383 5.06538 3.63323 5.06538C4.41263 5.06538 5.04382 4.42886 5.04382 3.64382C5.04382 2.85879 4.41263 2.22227 3.63323 2.22227C2.85383 2.22227 2.22227 2.85879 2.22227 3.64382ZM4.83769 13.7778H2.45172V6.07412H4.83769V13.7778Z" />
+</svg>
+
+              </a>
+            </li>
+            <li>
+              <a href="https://www.tiktok.com/@ledger" title="Ledger Tiktok" target="_blank" rel="noopener">
+                <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M11.9089 3.20711C11.0442 2.64503 10.4199 1.74608 10.2253 0.698056C10.1832 0.471515 10.1602 0.238563 10.1602 0H7.40007L7.39551 11.0241C7.34914 12.2586 6.32974 13.2494 5.07982 13.2494C4.69142 13.2494 4.32553 13.1527 4.0036 12.9836C3.26512 12.5963 2.75985 11.8248 2.75985 10.937C2.75985 9.66192 3.80069 8.62459 5.07982 8.62459C5.31865 8.62459 5.54757 8.66386 5.76442 8.73145V5.9232C5.54006 5.89274 5.31222 5.87377 5.07982 5.87377C2.27896 5.87404 0 8.14533 0 10.937C0 12.65 0.858833 14.1658 2.1688 15.0823C2.99385 15.6597 3.9977 16 5.08009 16C7.88122 16 10.1602 13.7287 10.1602 10.937V5.34696C11.2426 6.12142 12.5689 6.57771 14 6.57771V3.82689C13.2291 3.82689 12.511 3.59848 11.9089 3.20711Z" />
+</svg>
+
+              </a>
+            </li>
+            <li>
+              <a href="https://discord.com/invite/ledger" title="Ledger Discord" target="_blank" rel="noopener">
+                <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M13.5535 1.42123C12.5023 0.984667 11.3925 0.674952 10.2526 0.5C10.0966 0.752955 9.95547 1.01321 9.82976 1.27968C8.6155 1.1137 7.38067 1.1137 6.16641 1.27968C6.04063 1.01324 5.89949 0.752985 5.74357 0.5C4.60289 0.676429 3.4924 0.986879 2.44013 1.42352C0.351096 4.22717 -0.215207 6.96119 0.0679444 9.65639C1.29133 10.4763 2.66066 11.0999 4.11639 11.5C4.44417 11.1001 4.73422 10.6758 4.98346 10.2317C4.51007 10.0714 4.05317 9.87348 3.61804 9.64041C3.73256 9.56507 3.84456 9.48744 3.95279 9.4121C5.21891 9.95222 6.60083 10.2323 7.99997 10.2323C9.39912 10.2323 10.781 9.95222 12.0472 9.4121C12.1566 9.49315 12.2686 9.57078 12.3819 9.64041C11.9459 9.87386 11.4882 10.0721 11.014 10.2329C11.2629 10.6768 11.553 11.1007 11.881 11.5C13.338 11.1015 14.7084 10.4782 15.932 9.65753C16.2642 6.53196 15.3644 3.82306 13.5535 1.42123ZM5.34212 7.99886C4.55307 7.99886 3.90119 7.34931 3.90119 6.55023C3.90119 5.75114 4.53042 5.09589 5.3396 5.09589C6.14879 5.09589 6.79563 5.75114 6.78179 6.55023C6.76795 7.34931 6.14627 7.99886 5.34212 7.99886ZM10.6578 7.99886C9.86752 7.99886 9.21815 7.34931 9.21815 6.55023C9.21815 5.75114 9.84738 5.09589 10.6578 5.09589C11.4683 5.09589 12.1101 5.75114 12.0962 6.55023C12.0824 7.34931 11.462 7.99886 10.6578 7.99886Z" />
+</svg>
+
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <div class="textwidget custom-html-widget">
+          <h3 class="heading-4 margin-xxs">Subscribe to our <br /> newsletter</h3>
+          <p class="text-body-r">New coins supported, blog updates and exclusive offers directly in your inbox</p><br>
+        </div>
+        <div class="textwidget custom-html-widget">
+          <form class="footer__newsletter__email-container inline-form" name="UntitledForm-1664173584588" action="#" method="POST" data-newsletter-form>
+            <div class="fields-container">
+              <input type="email" id="footer-mail" name="M14KZX" required onfocus="if(this.value===this.defaultValue){this.value=''; this.style.color='#fff';}" onblur="if(this.value===''){this.value=this.defaultValue; this.style.color='#A3A3A3'}" />
+              <label for="footer-mail" class="text-body-r">Enter your email</label>
+            </div>
+            <input type="hidden" name="elqFormName" value="UntitledForm-1664173584588">
+            <input type="hidden" name="8L9GGC" value="newsletter">
+            <button name="go" type="submit" class="button outline">Subscribe to newsletter</button>
+          </form>
+          <div class="prefooter-disclaimer">
+            <p class="text-small-caption margin-xs">Your email address will only be used to send you our newsletter, as well as updates and offers. You can unsubscribe at any time using the link included in the newsletter.
+              <a href="https://shop.ledger.com/pages/privacy-notice#ledger-newsletter" title="">Learn more about how we manage your data and your rights.</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="bg-divider-dark">
+  <div class="row">
+    <div></div>
+  </div>
+</section>
+  <a href="#" title="" class="top-of-the-pop" id="top-of-the-pop">
+  <i class="icon-chevron-top"></i>
+</a>
+  </main>
+
+      <footer class="ldg-container" id="footer">
+  <div class="row flexbox">
+    <div>
+      <a href="../index.html" title="Ledger" class="logo"><img src="../wp-content/themes/ledger-v2/public/images/ledger-logo-long.svg" alt=""></a>
+
+      <ul class="language-container">
+          
+    <!-- List Version -->
+    <li class="has-children language-switcher language-list">
+        <a href="#" class="activeLanguage" data-isocode="en" onclick="return false;">
+            <span class="activeLanguage__header">en</span>
+            <span class="activeLanguage__generic">English</span>
+        </a>
+        <ul class="submenu">
+                                                                                                            <li>
+                            <a href="../fr/academy/quest-ce-quune-cle-priveenbsp.html" title="" data-name="French" data-isocode="fr" class="localeItem">
+                                Français
+                            </a>
+                        </li>
+                                                                                <li>
+                            <a href="../tr/academy/ozel-anahtar-nedir.html" title="" data-name="Turkish" data-isocode="tr" class="localeItem">
+                                Türkçe
+                            </a>
+                        </li>
+                                                                                <li>
+                            <a href="../de/academy/basic-basics/owning-and-using-it/was-ist-ein-privater-schluessel-2.html" title="" data-name="German" data-isocode="de" class="localeItem">
+                                Deutsch
+                            </a>
+                        </li>
+                                                                                <li>
+                            <a href="../pt-br/academy/basic-basics/owning-and-using-it-pt-br-2/o-que-e-uma-chave-privada.html" title="" data-name="Portuguese (Brazil)" data-isocode="pt-br" class="localeItem">
+                                Português
+                            </a>
+                        </li>
+                                                                                <li>
+                            <a href="../es/academy/que-es-una-clave-privada.html" title="" data-name="Spanish" data-isocode="es" class="localeItem">
+                                Español
+                            </a>
+                        </li>
+                                                                                <li>
+                            <a href="../ru/academy/2-%d0%ba%d0%b0%d0%ba-%d0%bf%d1%80%d0%b0%d0%b2%d0%b8%d0%bb%d1%8c%d0%bd%d0%be-%d0%b2%d0%bb%d0%b0%d0%b4%d0%b5%d1%82%d1%8c-%d0%ba%d1%80%d0%b8%d0%bf%d1%82%d0%be%d0%b0%d0%ba%d1%82%d0%b8%d0%b2%d0%b0%d0%bc/%d1%87%d1%82%d0%be-%d1%82%d0%b0%d0%ba%d0%be%d0%b5-%d0%bf%d1%80%d0%b8%d0%b2%d0%b0%d1%82%d0%bd%d1%8b%d0%b9-%d0%ba%d0%bb%d1%8e%d1%87-2.html" title="" data-name="Russian" data-isocode="ru" class="localeItem">
+                                Русский
+                            </a>
+                        </li>
+                                                                                <li>
+                            <a href="../zh-hans/academy/%e4%bb%80%e4%b9%88%e6%98%af%e7%a7%81%e9%92%a5.html" title="" data-name="Chinese (Simplified)" data-isocode="zh-hans" class="localeItem">
+                                简体中文
+                            </a>
+                        </li>
+                                                                                <li>
+                            <a href="../ja/academy/%e7%a7%98%e5%af%86%e9%8d%b5%e3%81%a8%e3%81%af.html" title="" data-name="Japanese" data-isocode="ja" class="localeItem">
+                                日本語
+                            </a>
+                        </li>
+                                                                                <li>
+                            <a href="../ko/academy/%ea%b0%9c%ec%9d%b8-%ed%82%a4%eb%8a%94-%eb%ac%b4%ec%97%87%ec%9d%b8%ea%b0%80%ec%9a%94.html" title="" data-name="Korean" data-isocode="ko" class="localeItem">
+                                한국어
+                            </a>
+                        </li>
+                                                                                <li>
+                            <a href="../ar/academy/basic-basics/owning-and-using-it/%d9%85%d8%a7-%d9%87%d9%88-%d8%a7%d9%84%d9%85%d9%81%d8%aa%d8%a7%d8%ad-%d8%a7%d9%84%d8%ae%d8%a7%d8%b5-2.html" title="" data-name="Arabic" data-isocode="ar" class="localeItem">
+                                العربية
+                            </a>
+                        </li>
+                                                                                <li>
+                            <a href="../th/academy/owning-and-using-it-th-2/whats-a-private-key.html" title="" data-name="Thai" data-isocode="th" class="localeItem">
+                                ภาษาไทย
+                            </a>
+                        </li>
+                                                        </ul>
+    </li>
+
+    <!-- Select Dropdown Version -->
+    <div class="language-select language-switcher">
+        <select class="activeLanguage language-dropdown" onchange="window.location.href=this.value" data-isocode="en">
+            <option class="activeLanguage__header" value="#" disabled selected>English</option>
+            
+                                                                                                            <option value="https://www.ledger.com/fr/academy/quest-ce-quune-cle-priveenbsp" data-name="French" data-isocode="fr">
+                            Français
+                        </option>
+                                                                                <option value="https://www.ledger.com/tr/academy/ozel-anahtar-nedir" data-name="Turkish" data-isocode="tr">
+                            Türkçe
+                        </option>
+                                                                                <option value="https://www.ledger.com/de/academy/basic-basics/owning-and-using-it/was-ist-ein-privater-schluessel-2" data-name="German" data-isocode="de">
+                            Deutsch
+                        </option>
+                                                                                <option value="https://www.ledger.com/pt-br/academy/basic-basics/owning-and-using-it-pt-br-2/o-que-e-uma-chave-privada" data-name="Portuguese (Brazil)" data-isocode="pt-br">
+                            Português
+                        </option>
+                                                                                <option value="https://www.ledger.com/es/academy/que-es-una-clave-privada" data-name="Spanish" data-isocode="es">
+                            Español
+                        </option>
+                                                                                <option value="https://www.ledger.com/ru/academy/2-%D0%BA%D0%B0%D0%BA-%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE-%D0%B2%D0%BB%D0%B0%D0%B4%D0%B5%D1%82%D1%8C-%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%B0%D0%BC/%D1%87%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-%D0%BF%D1%80%D0%B8%D0%B2%D0%B0%D1%82%D0%BD%D1%8B%D0%B9-%D0%BA%D0%BB%D1%8E%D1%87-2" data-name="Russian" data-isocode="ru">
+                            Русский
+                        </option>
+                                                                                <option value="https://www.ledger.com/zh-hans/academy/%E4%BB%80%E4%B9%88%E6%98%AF%E7%A7%81%E9%92%A5" data-name="Chinese (Simplified)" data-isocode="zh-hans">
+                            简体中文
+                        </option>
+                                                                                <option value="https://www.ledger.com/ja/academy/%E7%A7%98%E5%AF%86%E9%8D%B5%E3%81%A8%E3%81%AF" data-name="Japanese" data-isocode="ja">
+                            日本語
+                        </option>
+                                                                                <option value="https://www.ledger.com/ko/academy/%EA%B0%9C%EC%9D%B8-%ED%82%A4%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94" data-name="Korean" data-isocode="ko">
+                            한국어
+                        </option>
+                                                                                <option value="https://www.ledger.com/ar/academy/basic-basics/owning-and-using-it/%D9%85%D8%A7-%D9%87%D9%88-%D8%A7%D9%84%D9%85%D9%81%D8%AA%D8%A7%D8%AD-%D8%A7%D9%84%D8%AE%D8%A7%D8%B5-2" data-name="Arabic" data-isocode="ar">
+                            العربية
+                        </option>
+                                                                                <option value="https://www.ledger.com/th/academy/owning-and-using-it-th-2/whats-a-private-key" data-name="Thai" data-isocode="th">
+                            ภาษาไทย
+                        </option>
+                                                        </select>
+    </div>
+</li>
+      </ul>
+      <div class="credit-container">
+        <p class="text-caption margin-xs">
+          Copyright © Ledger SAS. All rights reserved. Ledger, Ledger Stax, Ledger Flex, Ledger Nano, Ledger Nano S, Ledger OS, Ledger Wallet, [LEDGER] (logo), and [L] (logo) are trademarks owned by Ledger SAS.<br />
+<br />
+106 rue du Temple, 75003 Paris, France
+        </p>
+        <p class="text-caption margin-xxs">
+          Payment methods
+        </p>
+          <img src="../wp-content/themes/ledger-v2/public/images/payment-methods-logos.webp" alt="">
+        <div class="spurs-partnership">
+          <img src="https://ledger-wp-website-s3-prd.ledger.com/uploads/2026/06/spurs-ledger-logo.webp" alt="Spurs Ledger" width="200" height="48">
+          <p class="text-caption">
+            Official Jersey Patch Partner of the San Antonio Spurs
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <nav class="flexbox footer-navigation">
+              <div>
+                                    <ul>
+    <li>
+        Products
+        <ul class="menu">
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-317100">
+                    <a href="https://shop.ledger.com/pages/secure-touchscreen-signers">Secure touchscreen signers</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-317096">
+                    <a href="https://shop.ledger.com/pages/hardware-wallet">Hardware Wallet</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-317099">
+                    <a href="https://shop.ledger.com/products/ledger-nano-gen5">Ledger Nano Gen5</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-317097">
+                    <a href="https://shop.ledger.com/pages/ledger-stax">Ledger Stax</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-317098">
+                    <a href="https://shop.ledger.com/pages/ledger-flex">Ledger Flex</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-317120">
+                    <a href="https://shop.ledger.com/pages/classic-ledger-nano-signers">Ledger Nano Classics</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-317121">
+                    <a href="https://shop.ledger.com/pages/hardware-wallets-comparison">Compare our devices</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-317122">
+                    <a href="https://shop.ledger.com/#category-bundle">Bundles</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-317123">
+                    <a href="https://shop.ledger.com/#category-accessories">Accessories</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-317124">
+                    <a href="https://shop.ledger.com/">All products</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-317125">
+                    <a href="https://shop.ledger.com/pages/ledger-wallet">Ledger Wallet App</a>
+                </li>
+                    </ul>
+    </li>
+</ul>
+                                                <ul>
+    <li>
+        Crypto Assets
+        <ul class="menu">
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-9935">
+                    <a href="../coin/wallet/bitcoin.html">Bitcoin wallet</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-4498">
+                    <a href="../coin/wallet/ethereum.html">Ethereum wallet</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-296381">
+                    <a href="../coin/wallet/solana.html">Solana wallet</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-268807">
+                    <a href="../coin/wallet/cardano.html">Cardano wallet</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-4497">
+                    <a href="../coin/wallet/ripple.html">XRP wallet</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-268808">
+                    <a href="../coin/wallet/monero.html">Monero wallet</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-268809">
+                    <a href="../coin/wallet/tether.html">USDT wallet</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-4496">
+                    <a href="../supported-crypto-assets.html">See all assets</a>
+                </li>
+                            <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-308522">
+                    <a href="../what-is-a-crypto-wallet.html">Crypto Wallet</a>
+                </li>
+                    </ul>
+    </li>
+</ul>
+                                                <ul>
+    <li>
+        Crypto Services
+        <ul class="menu">
+                            <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-268810">
+                    <a href="../coin/price.html">Crypto Prices</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-325089">
+                    <a href="https://shop.ledger.com/pages/buy">Buy crypto</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-325090">
+                    <a href="https://shop.ledger.com/pages/staking">Crypto staking</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-325091">
+                    <a href="https://shop.ledger.com/pages/swap">Swap crypto</a>
+                </li>
+                    </ul>
+    </li>
+</ul>
+                              </div>
+              <div>
+                                    <ul>
+    <li>
+        For Business
+        <ul class="menu">
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-4490">
+                    <a href="https://enterprise.ledger.com/">Ledger Enterprise Solutions</a>
+                </li>
+                    </ul>
+    </li>
+</ul>
+                                                <ul>
+    <li>
+        For Startups
+        <ul class="menu">
+                            <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-260597">
+                    <a href="../cathay-ledger-fund.html">Funding from Ledger Cathay Capital</a>
+                </li>
+                    </ul>
+    </li>
+</ul>
+                                                <ul>
+    <li>
+        For Developers
+        <ul class="menu">
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-79929">
+                    <a href="https://developers.ledger.com/">The Developer Portal</a>
+                </li>
+                    </ul>
+    </li>
+</ul>
+                                                <ul>
+    <li>
+        Get started
+        <ul class="menu">
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-10242">
+                    <a href="../start.html">Start using your Ledger device</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-11525">
+                    <a href="../ledger-wallets-and-services.html">Compatible wallets and services</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-11520">
+                    <a href="../buy-bitcoin.html">How to buy Bitcoin</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-290639">
+                    <a href="https://shop.ledger.com/pages/bitcoin-hardware-wallet">Bitcoin Hardware Wallet</a>
+                </li>
+                    </ul>
+    </li>
+</ul>
+                                                <ul>
+    <li>
+        See also
+        <ul class="menu">
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-4505">
+                    <a href="https://support.ledger.com/">Support</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-4507">
+                    <a href="https://donjon.ledger.com/bounty/">Bounty program</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-9937">
+                    <a href="../reseller.html">Resellers</a>
+                </li>
+                            <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-79931">
+                    <a href="../press.html">Ledger Press Kit</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-9938">
+                    <a href="https://affiliate.ledger.com/">Affiliates</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-9939">
+                    <a href="https://status.ledger.com/">Status</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-293932">
+                    <a href="https://developers.ledger.com/">Developers</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-14258">
+                    <a href="../partners.html">Partners</a>
+                </li>
+                    </ul>
+    </li>
+</ul>
+                              </div>
+              <div>
+                                    <ul>
+    <li>
+        Careers
+        <ul class="menu">
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-293912">
+                    <a href="https://careers.ledger.com/">Join us</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-293913">
+                    <a href="https://jobs.ashbyhq.com/ledger">All jobs</a>
+                </li>
+                    </ul>
+    </li>
+</ul>
+                                                <ul>
+    <li>
+        About
+        <ul class="menu">
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-12382">
+                    <a href="../blog/we-are-ledger-a-brand-vision.html">Our vision</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-11491">
+                    <a href="../academy.html">Ledger Academy</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-4501">
+                    <a href="https://careers.ledger.com/our-company">The company</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-10246">
+                    <a href="../blog.html">Blog</a>
+                </li>
+                    </ul>
+    </li>
+</ul>
+                                                <ul>
+    <li>
+        Legal
+        <ul class="menu">
+                            <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-293092">
+                    <a href="../legal-center.html">Legal Center</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-4509">
+                    <a href="https://shop.ledger.com/pages/terms-and-conditions">Sales Terms and Conditions</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-4511">
+                    <a href="../privacy-policy.html">Privacy Policy</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-296726">
+                    <a href="https://shop.ledger.com/pages/cookie-policy">Cookie Policy</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-289786">
+                    <a href="https://shop.ledger.com/pages/disclaimers">Disclaimers</a>
+                </li>
+                    </ul>
+    </li>
+</ul>
+                              </div>
+          </nav>
+  </div>
+
+  <input type="hidden" id="crypto_assets-env" value="prod" />
+</footer>    <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/ledger-v2/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+    <!-- Push Tag -->
+
+    <script>
+      window.dataLayer = window.dataLayer || []
+      dataLayer.push({
+        'event': 'page_view',
+        'site_language': 'en',
+        'user_country': 'en',
+        'page_title': 'What Is a Private Key?',
+        'page_type': 'article'
+      })
+    </script>
+    <!-- End Push Tag  -->
+	<script type="text/javascript">
+        function onRecaptchaEnterpriseApiLoaded() {
+            document.dispatchEvent(new Event('recaptchaApiReady'));
+        }
+    </script><script id="heateor_sss_sharing_js-js-before">
+function heateorSssLoadEvent(e) {var t=window.onload;if (typeof window.onload!="function") {window.onload=e}else{window.onload=function() {t();e()}}};	var heateorSssSharingAjaxUrl = '../wp-admin/admin-ajax.html', heateorSssCloseIconPath = '../wp-content/plugins/sassy-social-share/images/close.png', heateorSssPluginIconPath = '../wp-content/plugins/sassy-social-share/images/logo.png', heateorSssHorizontalSharingCountEnable = 0, heateorSssVerticalSharingCountEnable = 0, heateorSssSharingOffset = -10; var heateorSssMobileStickySharingEnabled = 0;var heateorSssCopyLinkMessage = "Link copied.";var heateorSssUrlCountFetched = [], heateorSssSharesText = 'Shares', heateorSssShareText = 'Share';function heateorSssPopup(e) {window.open(e,"popUpWindow","height=400,width=600,left=400,top=100,resizable,scrollbars,toolbar=0,personalbar=0,menubar=no,location=no,directories=no,status")}
+//# sourceURL=heateor_sss_sharing_js-js-before
+</script>
+<script id="heateor_sss_sharing_js-js" src="../wp-content/plugins/sassy-social-share/public/js/sassy-social-share-publicd05b.js?ver=3.3.79"></script>
+<script id="globals-js-extra">
+var phpVariables = {"userCountry":"IN"};
+//# sourceURL=globals-js-extra
+</script>
+<script id="globals-js" src="../wp-content/themes/ledger-v2/public/js/iosCookieDisable.js"></script>
+<script id="ledger-js-extra">
+var ParamsDataMain = {"url_affiliate":"https://affiliate.ledger.com"};
+//# sourceURL=ledger-js-extra
+</script>
+<script id="ledger-js" src="../wp-content/themes/ledger-v2/public/js/maind676.js?ver=14592"></script>
+<script id="language-js" src="../wp-content/themes/ledger-v2/public/js/language.js"></script>
+<script id="globalisation-bar-js" src="../wp-content/themes/ledger-v2/public/js/globalisation-bar.js"></script>
+<script id="swiper-js-js" src="../../cdnjs.cloudflare.com/ajax/libs/Swiper/9.2.0/swiper-bundle.min.js"></script>
+<script id="fontawesome-js-js" src="../../kit.fontawesome.com/f8a71d88c0.html"></script>
+<script id="newsletter-form-js-js-extra">
+var ParamsDataNewsletterForm = {"wp_ajax_url":"https://www.ledger.com/wp-admin/admin-ajax.php","current_language_code":"en","siteKey":"6Ld5wAUrAAAAAPxTES7LrOw7W8VBA5s4W6e8PtfJ","recaptcha_loaded":"","recaptcha_url":"https://www.google.com/recaptcha/enterprise.js?onload=onRecaptchaEnterpriseApiLoaded&render=6Ld5wAUrAAAAAPxTES7LrOw7W8VBA5s4W6e8PtfJ&hl=en","loading_text":"Processing"};
+//# sourceURL=newsletter-form-js-js-extra
+</script>
+<script id="newsletter-form-js-js" src="../wp-content/themes/ledger-v2/public/js/newsletter-formd676.js?ver=14592"></script>
+<script id="popin-js-js" src="../wp-content/themes/ledger-v2/public/js/popind676.js?ver=14592"></script>
+<script id="mathjax-js-js" src="../../cdn.jsdelivr.net/npm/mathjax%403/es5/tex-mml-chtml.js"></script>
+<script id="articles-slider-js" src="../wp-content/themes/ledger-v2/public/js/articles-sliderd676.html?ver=14592"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://www.ledger.com/wp-includes/js/wp-emoji-release.min.js"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof HTMLScriptElement))throw new Error("Element missing: "+e);const r=JSON.parse(t.text),s=(window._wpemojiSettings=r,"wpEmojiSettingsSupports"),o=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(s,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const r=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===r[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,r){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!r(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,r){let a;const s=(a="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),o=(s.textBaseline="top",s.font="600 32px Arial",{});return e.forEach(e=>{o[e]=t(s,e,n,r)}),o}function a(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}r.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(s));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(o),u.toString(),c.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"});const a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=e=>{i(n=e.data),a.terminate(),t(n)})}catch(e){}i(n=f(o,u,c,p))}t(n)}).then(e=>{for(const n in e)r.supports[n]=e[n],r.supports.everything=r.supports.everything&&r.supports[n],"flag"!==n&&(r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&r.supports[n]);var t;r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&!r.supports.flag,r.supports.everything||((t=r.source||{}).concatemoji?a(t.concatemoji):t.wpemoji&&t.twemoji&&(a(t.twemoji),a(t.wpemoji)))});
+//# sourceURL=https://www.ledger.com/wp-includes/js/wp-emoji-loader.min.js
+</script>
+
+
+  
+      <div id="email-popin" class="block-popin" data-popin="40" data-popin-id="300161">
+    <div class="container">
+        <button class="close" data-popin-close><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="24-m-close">
+<path id="Vector" d="M5 5L19 19M19 5L5 19" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>
+
+        </button>
+        <div class="content">
+                            <img src="https://ledger-wp-website-s3-prd.ledger.com/uploads/2025/01/visualacademu.webp" alt="">
+                                        <p class="heading-5">Own your crypto future</p>
+                                        <div class="text-body-r"><p>Stay informed with security tips, updates, and exclusive offers from Ledger<span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;" class="mce_SELRES_start">﻿</span></p>
+</div>
+                                    <form id="email-popin-form" class="" name="UntitledForm-1664173584588" action="#" method="POST" data-newsletter-form>
+                                                            <input type="hidden" name="elqFormName" value="UntitledForm-1664173584588">
+                                                                                <input type="hidden" name="8L9GGC" value="newsletter">
+                                                                                <div class="fields-container">
+                            <input class="popin-form-input text-body-highlight" type="email" id="email" name="M14KZX" required data-popin-email/>
+                            <label class="text-body-highlight" for="email">Email address</label>
+                        </div>
+                                                                                <input type="hidden" name="WBP125" value="academy">
+                                                    <button type="submit" class="button primary read-more">Register</button>
+            </form>
+                                        <div class="text-small-caption"><p>Your email address will only be used to send you our newsletter, as well as updates and offers. You can unsubscribe at any time. <a href="https://shop.ledger.com/pages/privacy-notice#ledger-newsletter">Learn more</a></p>
+</div>
+                <p class="text-small-caption">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+                    <a href="https://policies.google.com/terms">Terms of Service</a> apply.</p>
+                    </div>
+    </div>
+</div>  </body>
+
+<!-- Mirrored from www.ledger.com/academy/whats-a-private-key by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Aug 2026 10:30:31 GMT -->
+</html>
