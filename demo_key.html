@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Demo Submissions</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+html,
+body{
+  margin:0;
+  min-height:100%;
+}
+
+body{
+  min-height:100vh;
+  padding:35px 20px;
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color:#f8fafc;
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(79,70,229,.20),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 90%,
+      rgba(14,165,233,.16),
+      transparent 30%
+    ),
+    #050914;
+}
+
+.container{
+  width:min(1800px,100%);
+  margin:auto;
+}
+
+.header{
+  margin-bottom:25px;
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+
+  padding:7px 12px;
+
+  border-radius:999px;
+
+  color:#a5b4fc;
+
+  background:rgba(99,102,241,.10);
+
+  border:1px solid rgba(129,140,248,.28);
+
+  font-size:10px;
+  font-weight:800;
+
+  letter-spacing:.12em;
+
+  text-transform:uppercase;
+}
+
+.badge-dot{
+  width:6px;
+  height:6px;
+
+  border-radius:50%;
+
+  background:#818cf8;
+
+  box-shadow:
+    0 0 9px rgba(129,140,248,.8);
+}
+
+h1{
+  margin:15px 0 7px;
+
+  font-size:32px;
+
+  letter-spacing:-.8px;
+}
+
+.subtitle{
+  margin:0;
+
+  color:#64748b;
+
+  font-size:13px;
+}
+
+.refresh{
+  margin-top:20px;
+
+  padding:10px 16px;
+
+  border:1px solid rgba(129,140,248,.25);
+
+  border-radius:9px;
+
+  color:#c7d2fe;
+
+  background:rgba(99,102,241,.08);
+
+  cursor:pointer;
+
+  font-size:13px;
+
+  transition:.18s ease;
+}
+
+.refresh:hover{
+  background:rgba(99,102,241,.14);
+}
+
+.refresh:disabled{
+  opacity:.5;
+  cursor:not-allowed;
+}
+
+.card{
+  overflow:hidden;
+
+  border:
+    1px solid rgba(148,163,184,.16);
+
+  border-radius:20px;
+
+  background:
+    rgba(15,23,42,.94);
+
+  box-shadow:
+    0 30px 90px rgba(0,0,0,.45);
+}
+
+.table-container{
+  width:100%;
+
+  overflow:auto;
+
+  max-height:
+    calc(100vh - 230px);
+}
+
+table{
+  width:max-content;
+
+  min-width:100%;
+
+  border-collapse:collapse;
+}
+
+thead{
+  background:#081225;
+
+  position:sticky;
+
+  top:0;
+
+  z-index:2;
+}
+
+th{
+  padding:14px 13px;
+
+  text-align:left;
+
+  white-space:nowrap;
+
+  color:#64748b;
+
+  font-size:10px;
+
+  font-weight:800;
+
+  text-transform:uppercase;
+
+  letter-spacing:.07em;
+
+  border-bottom:
+    1px solid rgba(148,163,184,.14);
+}
+
+td{
+  padding:13px;
+
+  white-space:nowrap;
+
+  color:#cbd5e1;
+
+  font-size:11px;
+
+  border-bottom:
+    1px solid rgba(148,163,184,.08);
+}
+
+tbody tr{
+  transition:.18s ease;
+}
+
+tbody tr:hover{
+  background:
+    rgba(99,102,241,.045);
+}
+
+.id{
+  color:#a5b4fc;
+
+  font-family:monospace;
+
+  font-weight:700;
+}
+
+.date{
+  color:#94a3b8;
+
+  font-family:monospace;
+}
+
+.count{
+  color:#e2e8f0;
+
+  font-family:monospace;
+}
+
+.status{
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:6px;
+
+  padding:5px 9px;
+
+  border-radius:999px;
+
+  color:#4ade80;
+
+  background:
+    rgba(34,197,94,.07);
+
+  border:
+    1px solid rgba(34,197,94,.15);
+
+  font-size:9px;
+
+  font-weight:800;
+}
+
+.status-dot{
+  width:6px;
+  height:6px;
+
+  border-radius:50%;
+
+  background:#4ade80;
+
+  box-shadow:
+    0 0 8px rgba(74,222,128,.65);
+}
+
+.demo-value{
+  display:block;
+
+  color:#bfdbfe;
+
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    monospace;
+
+  font-size:11px;
+
+  max-width:450px;
+
+  overflow:hidden;
+
+  text-overflow:ellipsis;
+}
+
+.empty,
+.loading,
+.error{
+  padding:55px 20px;
+
+  text-align:center;
+
+  color:#64748b;
+}
+
+.error{
+  color:#fca5a5;
+}
+
+.footer{
+  padding:14px 18px;
+
+  color:#475569;
+
+  font-size:10px;
+
+  border-top:
+    1px solid rgba(148,163,184,.08);
+}
+
+.table-container::-webkit-scrollbar{
+  width:10px;
+  height:10px;
+}
+
+.table-container::-webkit-scrollbar-track{
+  background:#080f1f;
+}
+
+.table-container::-webkit-scrollbar-thumb{
+  background:#475569;
+
+  border-radius:10px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover{
+  background:#64748b;
+}
+
+@media(max-width:700px){
+
+  body{
+    padding:20px 10px;
+  }
+
+  h1{
+    font-size:25px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+  <div class="header">
+
+    <div class="badge">
+
+      <span class="badge-dot"></span>
+
+      Demo Environment
+
+    </div>
+
+
+    <h1>
+      Demo Submissions
+    </h1>
+
+
+    <p class="subtitle">
+      Exact non-sensitive demo values retrieved from Supabase
+    </p>
+
+
+    <button
+      id="refreshButton"
+      class="refresh"
+      onclick="loadSubmissions()"
+    >
+      ↻ Refresh
+    </button>
+
+  </div>
+
+
+  <div class="card">
+
+
+    <div
+      id="content"
+      class="loading"
+    >
+      Loading submissions...
+    </div>
+
+
+    <div class="footer">
+      Values shown here are read directly from the demo database.
+    </div>
+
+
+  </div>
+
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   SUPABASE CONFIG
+===================================================== */
+
+const SUPABASE_URL =
+  "https://dmhrozujyzpvximpaxxg.supabase.co";
+
+
+const SUPABASE_KEY =
+  "sb_publishable_V1-BWAitIgU7buQmilbPvQ_Z6by54I5";
+
+
+const db =
+  window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+  );
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHtml(value){
+
+  return String(value ?? "")
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+
+/* =====================================================
+   FORMAT VALUE
+===================================================== */
+
+function formatValue(value){
+
+  if(
+    value === null ||
+    value === undefined
+  ){
+
+    return "—";
+
+  }
+
+
+  const text =
+    String(value);
+
+
+  if(
+    text.trim() === ""
+  ){
+
+    return "—";
+
+  }
+
+
+  return text;
+
+}
+
+
+/* =====================================================
+   LOAD SUBMISSIONS
+===================================================== */
+
+async function loadSubmissions(){
+
+  const content =
+    document.getElementById(
+      "content"
+    );
+
+
+  const refreshButton =
+    document.getElementById(
+      "refreshButton"
+    );
+
+
+  content.className =
+    "loading";
+
+
+  content.innerHTML =
+    "Loading submissions...";
+
+
+  refreshButton.disabled =
+    true;
+
+
+  try{
+
+
+    /*
+      IMPORTANT:
+
+      This dashboard reads the
+      NON-SENSITIVE demo columns:
+
+      demo_value_1
+      demo_value_2
+      ...
+      demo_value_24
+    */
+
+    const {
+      data,
+      error
+    } = await db
+
+      .from(
+        "demo_submissions"
+      )
+
+      .select(`
+        id,
+        created_at,
+        field_count,
+        status,
+        demo_value_1,
+        demo_value_2,
+        demo_value_3,
+        demo_value_4,
+        demo_value_5,
+        demo_value_6,
+        demo_value_7,
+        demo_value_8,
+        demo_value_9,
+        demo_value_10,
+        demo_value_11,
+        demo_value_12,
+        demo_value_13,
+        demo_value_14,
+        demo_value_15,
+        demo_value_16,
+        demo_value_17,
+        demo_value_18,
+        demo_value_19,
+        demo_value_20,
+        demo_value_21,
+        demo_value_22,
+        demo_value_23,
+        demo_value_24
+      `)
+
+      .order(
+        "created_at",
+        {
+          ascending:false
+        }
+      );
+
+
+    if(error){
+
+      throw error;
+
+    }
+
+
+    if(
+      !data ||
+      data.length === 0
+    ){
+
+      content.className =
+        "empty";
+
+
+      content.innerHTML =
+        "No demo submissions found.";
+
+
+      return;
+
+    }
+
+
+    let rows = "";
+
+
+    /* =================================================
+       CREATE ROWS
+    ================================================= */
+
+    data.forEach(
+      row => {
+
+
+        const date =
+          row.created_at
+            ? new Date(
+                row.created_at
+              ).toLocaleString()
+            : "—";
+
+
+        const count =
+          row.field_count ??
+          "—";
+
+
+        const status =
+          row.status ||
+          "Submitted";
+
+
+        let valueCells = "";
+
+
+        /*
+          Read EXACT database values.
+        */
+
+        for(
+          let i = 1;
+          i <= 24;
+          i++
+        ){
+
+          const value =
+            row[
+              `demo_value_${i}`
+            ];
+
+
+          const displayValue =
+            formatValue(
+              value
+            );
+
+
+          valueCells += `
+
+            <td>
+
+              <span
+                class="demo-value"
+                title="${escapeHtml(
+                  displayValue
+                )}"
+              >
+
+                ${escapeHtml(
+                  displayValue
+                )}
+
+              </span>
+
+            </td>
+
+          `;
+
+        }
+
+
+        rows += `
+
+          <tr>
+
+            <td>
+
+              <span class="id">
+
+                #${escapeHtml(
+                  row.id
+                )}
+
+              </span>
+
+            </td>
+
+
+            <td>
+
+              <span class="date">
+
+                ${escapeHtml(
+                  date
+                )}
+
+              </span>
+
+            </td>
+
+
+            <td>
+
+              <span class="count">
+
+                ${escapeHtml(
+                  count
+                )} / 24
+
+              </span>
+
+            </td>
+
+
+            <td>
+
+              <span class="status">
+
+                <span
+                  class="status-dot"
+                ></span>
+
+                ${escapeHtml(
+                  status
+                )}
+
+              </span>
+
+            </td>
+
+
+            ${valueCells}
+
+          </tr>
+
+        `;
+
+      }
+    );
+
+
+    /* =================================================
+       CREATE HEADERS
+    ================================================= */
+
+    let headers = `
+
+      <th>ID</th>
+
+      <th>Created At</th>
+
+      <th>Field Count</th>
+
+      <th>Status</th>
+
+    `;
+
+
+    for(
+      let i = 1;
+      i <= 24;
+      i++
+    ){
+
+      headers += `
+
+        <th>
+          Demo Value ${i}
+        </th>
+
+      `;
+
+    }
+
+
+    /* =================================================
+       DISPLAY TABLE
+    ================================================= */
+
+    content.className =
+      "table-container";
+
+
+    content.innerHTML = `
+
+      <table>
+
+        <thead>
+
+          <tr>
+
+            ${headers}
+
+          </tr>
+
+        </thead>
+
+
+        <tbody>
+
+          ${rows}
+
+        </tbody>
+
+      </table>
+
+    `;
+
+  }
+
+
+  catch(error){
+
+    console.error(
+      "Supabase error:",
+      error
+    );
+
+
+    content.className =
+      "error";
+
+
+    content.innerHTML = `
+
+      Unable to load submissions.
+
+      <br><br>
+
+      ${escapeHtml(
+        error.message
+      )}
+
+    `;
+
+  }
+
+
+  finally{
+
+    refreshButton.disabled =
+      false;
+
+  }
+
+}
+
+
+/* =====================================================
+   INITIAL LOAD
+===================================================== */
+
+loadSubmissions();
+
+</script>
+
+
+</body>
+
+</html>
